@@ -1,9 +1,9 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="author" content="周老师"/><meta name="copyright" content="周老师"/><meta name="theme-color" content="#FFB347"/><meta name="format-detection" content="telephone=no"/><meta name="keywords" content="C++,编程进阶,信奥赛"/><meta name="mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-touch-fullscreen" content="yes"/><meta name="application-name" content="我的世界治疗药水效果判断 | 周老师的编程课堂"/><meta name="apple-mobile-web-app-title" content="我的世界治疗药水效果判断 | 周老师的编程课堂"/><meta name="apple-mobile-web-app-status-bar-style" content="#FFB347"/><link rel="canonical" href="https://qingkechuang.github.io/2026/03/27/入门/我的世界治疗药水效果判断/"/><meta name="description" content="我的世界治疗药水效果判断  题目描述 在我的世界中，玩家的生命值上限为20.0点。当生命值较低时，玩家可以使用治疗药水恢复生命值。请根据玩家当前的生命值和药水的恢复量，判断是否需要继续使用药水。  规则  输入当前生命值（float类型，0.0-20.0）和药水恢复量（float类型，正数） 使用药水后，生命值不能超过20.0（上限） 如果使用后生命值仍低于5.0，输出&quot;继续使用...">
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="author" content="周老师"/><meta name="copyright" content="周老师"/><meta name="theme-color" content="#FFB347"/><meta name="format-detection" content="telephone=no"/><meta name="keywords" content="C++,编程进阶,信奥赛"/><meta name="mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-touch-fullscreen" content="yes"/><meta name="application-name" content="我的世界治疗药水效果判断 | 周老师的编程课堂"/><meta name="apple-mobile-web-app-title" content="我的世界治疗药水效果判断 | 周老师的编程课堂"/><meta name="apple-mobile-web-app-status-bar-style" content="#FFB347"/><link rel="canonical" href="https://qingkechuang.github.io/2026/03/27/入门/我的世界治疗药水效果判断/"/><meta name="description" content="我的世界治疗药水效果判断题目描述在我的世界中，玩家的生命值上限为20.0点。当生命值较低时，玩家可以使用治疗药水恢复生命值。请根据玩家当前的生命值和药水的恢复量，判断是否需要继续使用药水。 规则 输入当前生命值（float类型，0.0-20.0）和药水恢复量（float类型，正数） 使用药水后，生命值不能超过20.0（上限） 如果使用后生命值仍低于5.0，输出”继续使用药水” 否则，输出”生...">
 <meta property="og:type" content="article">
 <meta property="og:title" content="我的世界治疗药水效果判断 | 周老师的编程课堂">
 <meta property="og:url" content="https://qingkechuang.github.io/2026/03/27/%E5%85%A5%E9%97%A8/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E6%B2%BB%E7%96%97%E8%8D%AF%E6%B0%B4%E6%95%88%E6%9E%9C%E5%88%A4%E6%96%AD/index.html">
 <meta property="og:site_name" content="周老师的编程课堂">
-<meta property="og:description" content="我的世界治疗药水效果判断  题目描述 在我的世界中，玩家的生命值上限为20.0点。当生命值较低时，玩家可以使用治疗药水恢复生命值。请根据玩家当前的生命值和药水的恢复量，判断是否需要继续使用药水。  规则  输入当前生命值（float类型，0.0-20.0）和药水恢复量（float类型，正数） 使用药水后，生命值不能超过20.0（上限） 如果使用后生命值仍低于5.0，输出&quot;继续使用...">
+<meta property="og:description" content="我的世界治疗药水效果判断题目描述在我的世界中，玩家的生命值上限为20.0点。当生命值较低时，玩家可以使用治疗药水恢复生命值。请根据玩家当前的生命值和药水的恢复量，判断是否需要继续使用药水。 规则 输入当前生命值（float类型，0.0-20.0）和药水恢复量（float类型，正数） 使用药水后，生命值不能超过20.0（上限） 如果使用后生命值仍低于5.0，输出”继续使用药水” 否则，输出”生...">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://qingkechuang.github.io/2026/03/27/%E5%85%A5%E9%97%A8/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E6%B2%BB%E7%96%97%E8%8D%AF%E6%B0%B4%E6%95%88%E6%9E%9C%E5%88%A4%E6%96%AD/assets/images/Hexo-Theme-MEOW.png">
 <meta property="article:published_time" content="2026-03-27T11:04:18.000Z">
@@ -17,71 +17,171 @@
 <link rel="stylesheet" href="/ZLS_BIANCHENG/css/style.css">
 
 <link rel="stylesheet" href="/ZLS_BIANCHENG/css/third-party/dist/APlayer.min.css">
-<link rel="prefetch" href="/ZLS_BIANCHENG/"/><link rel="prefetch" href="/ZLS_BIANCHENG/archives"/><link rel="prefetch" href="/ZLS_BIANCHENG/tags"/><meta name="generator" content="Hexo 8.1.1"></head><body bg-style="none"><div class="post-progressbar-container"><div class="post-progressbar"></div></div><header><div id="navbar"><div id="nav-info"><a id="site-icon" href="/ZLS_BIANCHENG/" title="主页"><img src="/ZLS_BIANCHENG/assets/images/Hexo-Theme-MEOW.png" alt="Logo"/></a><a id="site-name" href="/ZLS_BIANCHENG/" title="主页"><div>周老师的编程课堂</div><img src="/ZLS_BIANCHENG/assets/images/svg/uc/uc-home.svg" class="icon noview" alt="Icon"></a></div><div id="nav-menu"></div><div id="nav-function"><div id="menu-btn"><a href="javascript:void(0);" title="打开菜单"><img src="/ZLS_BIANCHENG/assets/images/svg/uc/uc-menu.svg" class="icon noview" alt="Icon"></a></div></div></div></header><div id="menu-aside"><div id="menu-aside-container"><div id="menu-aside-info"><a href="/ZLS_BIANCHENG/" title="主页"><img src="/ZLS_BIANCHENG/assets/images/Hexo-Theme-MEOW.png" alt="Logo"/></a><a href="/ZLS_BIANCHENG/" title="主页">周老师的编程课堂</a></div><hr/></div></div><main><div class="banner"><div class="banner-info"><div class="banner-avatar"><img src="/ZLS_BIANCHENG/assets/images/Hexo-Theme-MEOW.png" alt="Avatar"/></div><div class="banner-title">「 欢迎来到周老师的编程世界 」</div></div></div><div class="post-container"><div class="post-main"><div class="post-content"><h1 class="post-title">我的世界治疗药水效果判断</h1><div class="post-author"><span>作者: 周老师</span></div><div class="post-meta"><div class="post-info"><div class="post-date"><div class="post-pubdate"><img src="/ZLS_BIANCHENG/assets/images/svg/ta/ta-pubdate.svg" class="icon noview" alt="Icon"><span>发表于2026-03-27</span></div><div class="post-update"><img src="/ZLS_BIANCHENG/assets/images/svg/ta/ta-update.svg" class="icon noview" alt="Icon"><span>更新于2026-03-27</span></div></div><div class="post-read"></div></div><div class="post-attribute"><div class="post-categories"><img src="/ZLS_BIANCHENG/assets/images/svg/ta/ta-category.svg" class="icon noview" alt="Icon"><span><a class="post-categories-link" href="/ZLS_BIANCHENG/categories/%E8%BF%9B%E9%98%B6%E7%9C%9F%E9%A2%98/">进阶真题</a></span></div><div class="post-tags"><img src="/ZLS_BIANCHENG/assets/images/svg/ta/ta-tag.svg" class="icon noview" alt="Icon"><span><a class="post-tags-link" href="/ZLS_BIANCHENG/tags/C/" rel="tag">C++</a><a class="post-tags-link" href="/ZLS_BIANCHENG/tags/%E4%BF%A1%E5%A5%A5%E8%B5%9B/" rel="tag">信奥赛</a><a class="post-tags-link" href="/ZLS_BIANCHENG/tags/%E7%BC%96%E7%A8%8B%E8%BF%9B%E9%98%B6/" rel="tag">编程进阶</a></span></div></div></div><div class="post markdown" indent="false"><h1 id="我的世界治疗药水效果判断"><a class="markdownIt-Anchor" href="#我的世界治疗药水效果判断"></a> 我的世界治疗药水效果判断</h1>
-<h2 id="题目描述"><a class="markdownIt-Anchor" href="#题目描述"></a> 题目描述</h2>
-<p>在我的世界中，玩家的生命值上限为20.0点。当生命值较低时，玩家可以使用治疗药水恢复生命值。请根据玩家当前的生命值和药水的恢复量，判断是否需要继续使用药水。</p>
-<h3 id="规则"><a class="markdownIt-Anchor" href="#规则"></a> 规则</h3>
-<ol>
+<link rel="prefetch" href="/ZLS_BIANCHENG/"/><link rel="prefetch" href="/ZLS_BIANCHENG/archives"/><link rel="prefetch" href="/ZLS_BIANCHENG/tags"/><meta name="generator" content="Hexo 8.1.1"><style>
+mjx-container{
+  padding: 0 0 !important
+}
+mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head><body bg-style="none"><div class="post-progressbar-container"><div class="post-progressbar"></div></div><header><div id="navbar"><div id="nav-info"><a id="site-icon" href="/ZLS_BIANCHENG/" title="主页"><img src="/ZLS_BIANCHENG/assets/images/Hexo-Theme-MEOW.png" alt="Logo"/></a><a id="site-name" href="/ZLS_BIANCHENG/" title="主页"><div>周老师的编程课堂</div><img src="/ZLS_BIANCHENG/assets/images/svg/uc/uc-home.svg" class="icon noview" alt="Icon"></a></div><div id="nav-menu"></div><div id="nav-function"><div id="menu-btn"><a href="javascript:void(0);" title="打开菜单"><img src="/ZLS_BIANCHENG/assets/images/svg/uc/uc-menu.svg" class="icon noview" alt="Icon"></a></div></div></div></header><div id="menu-aside"><div id="menu-aside-container"><div id="menu-aside-info"><a href="/ZLS_BIANCHENG/" title="主页"><img src="/ZLS_BIANCHENG/assets/images/Hexo-Theme-MEOW.png" alt="Logo"/></a><a href="/ZLS_BIANCHENG/" title="主页">周老师的编程课堂</a></div><hr/></div></div><main><div class="banner"><div class="banner-info"><div class="banner-avatar"><img src="/ZLS_BIANCHENG/assets/images/Hexo-Theme-MEOW.png" alt="Avatar"/></div><div class="banner-title">「 欢迎来到周老师的编程世界 」</div></div></div><div class="post-container"><div class="post-main"><div class="post-content"><h1 class="post-title">我的世界治疗药水效果判断</h1><div class="post-author"><span>作者: 周老师</span></div><div class="post-meta"><div class="post-info"><div class="post-date"><div class="post-pubdate"><img src="/ZLS_BIANCHENG/assets/images/svg/ta/ta-pubdate.svg" class="icon noview" alt="Icon"><span>发表于2026-03-27</span></div><div class="post-update"><img src="/ZLS_BIANCHENG/assets/images/svg/ta/ta-update.svg" class="icon noview" alt="Icon"><span>更新于2026-03-27</span></div></div><div class="post-read"></div></div><div class="post-attribute"><div class="post-categories"><img src="/ZLS_BIANCHENG/assets/images/svg/ta/ta-category.svg" class="icon noview" alt="Icon"><span><a class="post-categories-link" href="/ZLS_BIANCHENG/categories/%E8%BF%9B%E9%98%B6%E7%9C%9F%E9%A2%98/">进阶真题</a></span></div><div class="post-tags"><img src="/ZLS_BIANCHENG/assets/images/svg/ta/ta-tag.svg" class="icon noview" alt="Icon"><span><a class="post-tags-link" href="/ZLS_BIANCHENG/tags/C/" rel="tag">C++</a><a class="post-tags-link" href="/ZLS_BIANCHENG/tags/%E4%BF%A1%E5%A5%A5%E8%B5%9B/" rel="tag">信奥赛</a><a class="post-tags-link" href="/ZLS_BIANCHENG/tags/%E7%BC%96%E7%A8%8B%E8%BF%9B%E9%98%B6/" rel="tag">编程进阶</a></span></div></div></div><div class="post markdown" indent="false"><h1 id="我的世界治疗药水效果判断"><a href="#我的世界治疗药水效果判断" class="headerlink" title="我的世界治疗药水效果判断"></a>我的世界治疗药水效果判断</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>在我的世界中，玩家的生命值上限为20.0点。当生命值较低时，玩家可以使用治疗药水恢复生命值。请根据玩家当前的生命值和药水的恢复量，判断是否需要继续使用药水。</p>
+<h3 id="规则"><a href="#规则" class="headerlink" title="规则"></a>规则</h3><ol>
 <li>输入当前生命值（float类型，0.0-20.0）和药水恢复量（float类型，正数）</li>
 <li>使用药水后，生命值不能超过20.0（上限）</li>
-<li>如果使用后生命值仍低于5.0，输出&quot;继续使用药水&quot;</li>
-<li>否则，输出&quot;生命值充足&quot;</li>
+<li>如果使用后生命值仍低于5.0，输出”继续使用药水”</li>
+<li>否则，输出”生命值充足”</li>
 </ol>
-<h2 id="输入格式"><a class="markdownIt-Anchor" href="#输入格式"></a> 输入格式</h2>
-<p>输入两个float值，用空格分隔：</p>
+<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>输入两个float值，用空格分隔：</p>
 <ul>
 <li>第一个值：当前生命值（0.0 ≤ 当前生命值 ≤ 20.0）</li>
 <li>第二个值：药水恢复量（恢复量 &gt; 0）</li>
 </ul>
-<h2 id="输出格式"><a class="markdownIt-Anchor" href="#输出格式"></a> 输出格式</h2>
-<p>输出判断结果，只能是以下两个字符串之一：</p>
+<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>输出判断结果，只能是以下两个字符串之一：</p>
 <ul>
 <li>“继续使用药水”</li>
 <li>“生命值充足”</li>
 </ul>
-<h2 id="示例输入与输出"><a class="markdownIt-Anchor" href="#示例输入与输出"></a> 示例输入与输出</h2>
-<h3 id="示例1"><a class="markdownIt-Anchor" href="#示例1"></a> 示例1</h3>
-<p><strong>输入</strong>：15.5 3.0<br />
-<strong>计算过程</strong>：</p>
+<h2 id="示例输入与输出"><a href="#示例输入与输出" class="headerlink" title="示例输入与输出"></a>示例输入与输出</h2><h3 id="示例1"><a href="#示例1" class="headerlink" title="示例1"></a>示例1</h3><p><strong>输入</strong>：15.5 3.0<br><strong>计算过程</strong>：</p>
 <ul>
 <li>当前生命值15.5 + 药水恢复3.0 = 18.5</li>
 <li>18.5 ≤ 20.0（未超过上限）</li>
-<li>18.5 ≥ 5.0 → 输出&quot;生命值充足&quot;</li>
+<li>18.5 ≥ 5.0 → 输出”生命值充足”</li>
 </ul>
 <p><strong>输出</strong>：生命值充足</p>
-<h3 id="示例2"><a class="markdownIt-Anchor" href="#示例2"></a> 示例2</h3>
-<p><strong>输入</strong>：3.0 1.5<br />
-<strong>计算过程</strong>：</p>
+<h3 id="示例2"><a href="#示例2" class="headerlink" title="示例2"></a>示例2</h3><p><strong>输入</strong>：3.0 1.5<br><strong>计算过程</strong>：</p>
 <ul>
 <li>当前生命值3.0 + 药水恢复1.5 = 4.5</li>
-<li>4.5 &lt; 5.0 → 输出&quot;继续使用药水&quot;</li>
+<li>4.5 &lt; 5.0 → 输出”继续使用药水”</li>
 </ul>
 <p><strong>输出</strong>：继续使用药水</p>
-<h3 id="示例3"><a class="markdownIt-Anchor" href="#示例3"></a> 示例3</h3>
-<p><strong>输入</strong>：19.0 2.5<br />
-<strong>计算过程</strong>：</p>
+<h3 id="示例3"><a href="#示例3" class="headerlink" title="示例3"></a>示例3</h3><p><strong>输入</strong>：19.0 2.5<br><strong>计算过程</strong>：</p>
 <ul>
 <li>当前生命值19.0 + 药水恢复2.5 = 21.5 → 超过上限，按20.0计算</li>
-<li>20.0 ≥ 5.0 → 输出&quot;生命值充足&quot;</li>
+<li>20.0 ≥ 5.0 → 输出”生命值充足”</li>
 </ul>
 <p><strong>输出</strong>：生命值充足</p>
-<h3 id="示例4"><a class="markdownIt-Anchor" href="#示例4"></a> 示例4</h3>
-<p><strong>输入</strong>：4.9 0.1<br />
-<strong>计算过程</strong>：</p>
+<h3 id="示例4"><a href="#示例4" class="headerlink" title="示例4"></a>示例4</h3><p><strong>输入</strong>：4.9 0.1<br><strong>计算过程</strong>：</p>
 <ul>
 <li>当前生命值4.9 + 药水恢复0.1 = 5.0</li>
-<li>5.0 ≥ 5.0 → 输出&quot;生命值充足&quot;</li>
+<li>5.0 ≥ 5.0 → 输出”生命值充足”</li>
 </ul>
 <p><strong>输出</strong>：生命值充足</p>
-<h2 id="提示"><a class="markdownIt-Anchor" href="#提示"></a> 提示</h2>
-<ol>
+<h2 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h2><ol>
 <li>使用float变量存储当前生命值和药水恢复量</li>
 <li>计算新生命值时，若超过20.0则按20.0处理</li>
 <li>使用if条件判断新生命值是否低于5.0</li>
 <li>注意浮点数比较时的精度问题（本题无需特殊处理）</li>
 </ol>
-<h2 id="参考代码"><a class="markdownIt-Anchor" href="#参考代码"></a> 参考代码</h2>
-<div class="code-container" code-lang="Cpp"><div class="codebox"><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">float</span> current_health, potion_heal;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 输入当前生命值和药水恢复量</span></span><br><span class="line">    cin &gt;&gt; current_health &gt;&gt; potion_heal;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 计算使用药水后的生命值（不超过上限20.0）</span></span><br><span class="line">    <span class="type">float</span> new_health = current_health + potion_heal;</span><br><span class="line">    <span class="keyword">if</span> (new_health &gt; <span class="number">20.0f</span>) &#123;</span><br><span class="line">        new_health = <span class="number">20.0f</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 判断是否需要继续使用药水</span></span><br><span class="line">    <span class="keyword">if</span> (new_health &lt; <span class="number">5.0f</span>) &#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;继续使用药水&quot;</span> &lt;&lt; endl;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;生命值充足&quot;</span> &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><div class="code-fold" title="Fold/Open"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg></div><div class="code-copy" title="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"  stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg></div></div></div></div><div class="post-reward"><div class="post-reward-btn" title="赞赏作者"><img src="/ZLS_BIANCHENG/assets/images/svg/uc/uc-gift.svg" class="icon noview" alt="Icon"><span></span></div><div class="post-reward-content"><div class="post-reward-text"></div><div class="post-reward-list"><a href="/ZLS_BIANCHENG/null" target="_blank">致谢名单</a></div></div></div><div class="post-copyright"><div class="post-copyright-info">本作品由 周老师 于 2026-03-27 19:04:18 发布</div><div class="post-copyright-link"><span>作品地址：<a href="https://qingkechuang.github.io/2026/03/27/%E5%85%A5%E9%97%A8/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E6%B2%BB%E7%96%97%E8%8D%AF%E6%B0%B4%E6%95%88%E6%9E%9C%E5%88%A4%E6%96%AD/">我的世界治疗药水效果判断</a></span><button class="copy-text" type="button" data-text="https://qingkechuang.github.io/2026/03/27/%E5%85%A5%E9%97%A8/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E6%B2%BB%E7%96%97%E8%8D%AF%E6%B0%B4%E6%95%88%E6%9E%9C%E5%88%A4%E6%96%AD/">复制</button></div><div class="post-copyright-detail">除特别声明外，本站作品均采用 <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' title='Attribution-NonCommercial-ShareAlike' target='_blank'>CC BY-NC-SA 4.0</a> 许可协议，转载请注明来自 <a href='/ZLS_BIANCHENG/'>周老师的编程课堂</a></div><img class="post-copyright-icon noview" src="/ZLS_BIANCHENG/assets/images/Hexo-Theme-MEOW.png" alt="Logo"/></div><div class="post-tail-tags"><a class="post-tail-tags-link" href="/ZLS_BIANCHENG/tags/C/" rel="tag">C++</a><a class="post-tail-tags-link" href="/ZLS_BIANCHENG/tags/%E4%BF%A1%E5%A5%A5%E8%B5%9B/" rel="tag">信奥赛</a><a class="post-tail-tags-link" href="/ZLS_BIANCHENG/tags/%E7%BC%96%E7%A8%8B%E8%BF%9B%E9%98%B6/" rel="tag">编程进阶</a></div><div class="post-nav"><a class="post-nav-prev" href="/ZLS_BIANCHENG/2026/03/28/C++/cmath%E5%85%A5%E9%97%A8/" title="C++ cmath库完全入门：常用数学函数用法详解">上一篇<span>C++ cmath库完全入门：常用数学函数用法详解</span></a><a class="post-nav-next" href="/ZLS_BIANCHENG/2026/03/27/C++/C++%E5%85%A5%E9%97%A8_%5B1%5D/" title="C++基础语法入门">下一篇<span>C++基础语法入门</span></a></div></div><aside id="post-sidebar" status="show"><div id="toc-container"><div class="toc-title"><img src="/ZLS_BIANCHENG/assets/images/svg/ta/ta-toc.svg" class="icon noview" alt="Icon"><span>目录</span></div><div class="toc-content" id="toc-div"><ol class="toc-list"><li class="toc-list-item toc-list-level-1"><a class="toc-list-link" href="#%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E6%B2%BB%E7%96%97%E8%8D%AF%E6%B0%B4%E6%95%88%E6%9E%9C%E5%88%A4%E6%96%AD"><span class="toc-list-text"> 我的世界治疗药水效果判断</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="toc-list-text"> 题目描述</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#%E8%A7%84%E5%88%99"><span class="toc-list-text"> 规则</span></a></li></ol></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F"><span class="toc-list-text"> 输入格式</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F"><span class="toc-list-text"> 输出格式</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#%E7%A4%BA%E4%BE%8B%E8%BE%93%E5%85%A5%E4%B8%8E%E8%BE%93%E5%87%BA"><span class="toc-list-text"> 示例输入与输出</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#%E7%A4%BA%E4%BE%8B1"><span class="toc-list-text"> 示例1</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#%E7%A4%BA%E4%BE%8B2"><span class="toc-list-text"> 示例2</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#%E7%A4%BA%E4%BE%8B3"><span class="toc-list-text"> 示例3</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#%E7%A4%BA%E4%BE%8B4"><span class="toc-list-text"> 示例4</span></a></li></ol></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#%E6%8F%90%E7%A4%BA"><span class="toc-list-text"> 提示</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#%E5%8F%82%E8%80%83%E4%BB%A3%E7%A0%81"><span class="toc-list-text"> 参考代码</span></a></li></ol></li></ol></div></div></aside></div></div><div id="toolbar" hide=""><div id="toolbar-setting-container" hide=""><div class="toolbar-item"><button id="tool-color-mode" title="深色模式" type="button"><img src="/ZLS_BIANCHENG/assets/images/svg/ta/ta-moon.svg" class="icon noview" alt="Icon"></button></div><div class="toolbar-item"><button class="copy-text" id="tool-share" title="分享" type="button" data-text="https://qingkechuang.github.io/2026/03/27/%E5%85%A5%E9%97%A8/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E6%B2%BB%E7%96%97%E8%8D%AF%E6%B0%B4%E6%95%88%E6%9E%9C%E5%88%A4%E6%96%AD/"><img src="/ZLS_BIANCHENG/assets/images/svg/ta/ta-share.svg" class="icon noview" alt="Icon"></button></div><div class="toolbar-item"><button id="tool-font-size-plus" title="放大字体" type="button"><img src="/ZLS_BIANCHENG/assets/images/svg/ta/ta-text-plus.svg" class="icon noview" alt="Icon"></button></div><div class="toolbar-item"><button id="tool-font-size-minus" title="缩小字体" type="button"><img src="/ZLS_BIANCHENG/assets/images/svg/ta/ta-text-minus.svg" class="icon noview" alt="Icon"></button></div></div><div class="toolbar-container"><div class="toolbar-item"><button id="tool-setting" title="设置" type="button"><img src="/ZLS_BIANCHENG/assets/images/svg/ta/ta-setting.svg" class="icon noview" alt="Icon"></button></div><div class="toolbar-item"><button id="tool-toc" title="目录" type="button"><img src="/ZLS_BIANCHENG/assets/images/svg/ta/ta-toc.svg" class="icon noview" alt="Icon"></button></div><div class="toolbar-item"><button id="tool-gototop" title="返回顶部" type="button"><img src="/ZLS_BIANCHENG/assets/images/svg/ta/ta-up.svg" class="icon noview" alt="Icon"></button></div></div></div><div id="music-player"></div></main><footer><div class="footer"><div id="footer-copyright">© 2024 - 2026 <span>💗</span> <a href="/ZLS_BIANCHENG/null">周老师</a></div><div id="footer-info"><div id="footer-framework">🚀本站由 <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/chanwj/hexo-theme-meow" title="3.3.1" target="_blank">Meow</a> 强力驱动</div><div id="footer-runtime"><span id="runtime" data-startdate="2024-04-02T22:16:20.000Z">🌻已稳定运行.年.月.天</span></div></div></div></footer><div class="scripts"><script>const GLOBALCONFIG = {
+<h2 id="参考代码"><a href="#参考代码" class="headerlink" title="参考代码"></a>参考代码</h2><div class="code-container" code-lang="Cpp"><div class="codebox"><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>{</span><br><span class="line">    <span class="type">float</span> current_health, potion_heal;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 输入当前生命值和药水恢复量</span></span><br><span class="line">    cin &gt;&gt; current_health &gt;&gt; potion_heal;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 计算使用药水后的生命值（不超过上限20.0）</span></span><br><span class="line">    <span class="type">float</span> new_health = current_health + potion_heal;</span><br><span class="line">    <span class="keyword">if</span> (new_health &gt; <span class="number">20.0f</span>) {</span><br><span class="line">        new_health = <span class="number">20.0f</span>;</span><br><span class="line">    }</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 判断是否需要继续使用药水</span></span><br><span class="line">    <span class="keyword">if</span> (new_health &lt; <span class="number">5.0f</span>) {</span><br><span class="line">        cout &lt;&lt; <span class="string">"继续使用药水"</span> &lt;&lt; endl;</span><br><span class="line">    } <span class="keyword">else</span> {</span><br><span class="line">        cout &lt;&lt; <span class="string">"生命值充足"</span> &lt;&lt; endl;</span><br><span class="line">    }</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></table></figure><div class="code-fold" title="Fold/Open"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg></div><div class="code-copy" title="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"  stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg></div></div></div></div><div class="post-reward"><div class="post-reward-btn" title="赞赏作者"><img src="/ZLS_BIANCHENG/assets/images/svg/uc/uc-gift.svg" class="icon noview" alt="Icon"><span></span></div><div class="post-reward-content"><div class="post-reward-text"></div><div class="post-reward-list"><a href="/ZLS_BIANCHENG/null" target="_blank">致谢名单</a></div></div></div><div class="post-copyright"><div class="post-copyright-info">本作品由 周老师 于 2026-03-27 19:04:18 发布</div><div class="post-copyright-link"><span>作品地址：<a href="https://qingkechuang.github.io/2026/03/27/%E5%85%A5%E9%97%A8/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E6%B2%BB%E7%96%97%E8%8D%AF%E6%B0%B4%E6%95%88%E6%9E%9C%E5%88%A4%E6%96%AD/">我的世界治疗药水效果判断</a></span><button class="copy-text" type="button" data-text="https://qingkechuang.github.io/2026/03/27/%E5%85%A5%E9%97%A8/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E6%B2%BB%E7%96%97%E8%8D%AF%E6%B0%B4%E6%95%88%E6%9E%9C%E5%88%A4%E6%96%AD/">复制</button></div><div class="post-copyright-detail">除特别声明外，本站作品均采用 <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' title='Attribution-NonCommercial-ShareAlike' target='_blank'>CC BY-NC-SA 4.0</a> 许可协议，转载请注明来自 <a href='/ZLS_BIANCHENG/'>周老师的编程课堂</a></div><img class="post-copyright-icon noview" src="/ZLS_BIANCHENG/assets/images/Hexo-Theme-MEOW.png" alt="Logo"/></div><div class="post-tail-tags"><a class="post-tail-tags-link" href="/ZLS_BIANCHENG/tags/C/" rel="tag">C++</a><a class="post-tail-tags-link" href="/ZLS_BIANCHENG/tags/%E4%BF%A1%E5%A5%A5%E8%B5%9B/" rel="tag">信奥赛</a><a class="post-tail-tags-link" href="/ZLS_BIANCHENG/tags/%E7%BC%96%E7%A8%8B%E8%BF%9B%E9%98%B6/" rel="tag">编程进阶</a></div><div class="post-nav"><a class="post-nav-prev" href="/ZLS_BIANCHENG/2026/03/28/C++/cmath%E5%85%A5%E9%97%A8/" title="C++ cmath库完全入门：常用数学函数用法详解">上一篇<span>C++ cmath库完全入门：常用数学函数用法详解</span></a><a class="post-nav-next" href="/ZLS_BIANCHENG/2026/03/27/C++/C++%E5%85%A5%E9%97%A8_%5B1%5D/" title="C++基础语法入门">下一篇<span>C++基础语法入门</span></a></div></div><aside id="post-sidebar" status="show"><div id="toc-container"><div class="toc-title"><img src="/ZLS_BIANCHENG/assets/images/svg/ta/ta-toc.svg" class="icon noview" alt="Icon"><span>目录</span></div><div class="toc-content" id="toc-div"><ol class="toc-list"><li class="toc-list-item toc-list-level-1"><a class="toc-list-link" href="#%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E6%B2%BB%E7%96%97%E8%8D%AF%E6%B0%B4%E6%95%88%E6%9E%9C%E5%88%A4%E6%96%AD"><span class="toc-list-text">我的世界治疗药水效果判断</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="toc-list-text">题目描述</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#%E8%A7%84%E5%88%99"><span class="toc-list-text">规则</span></a></li></ol></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F"><span class="toc-list-text">输入格式</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F"><span class="toc-list-text">输出格式</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#%E7%A4%BA%E4%BE%8B%E8%BE%93%E5%85%A5%E4%B8%8E%E8%BE%93%E5%87%BA"><span class="toc-list-text">示例输入与输出</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#%E7%A4%BA%E4%BE%8B1"><span class="toc-list-text">示例1</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#%E7%A4%BA%E4%BE%8B2"><span class="toc-list-text">示例2</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#%E7%A4%BA%E4%BE%8B3"><span class="toc-list-text">示例3</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#%E7%A4%BA%E4%BE%8B4"><span class="toc-list-text">示例4</span></a></li></ol></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#%E6%8F%90%E7%A4%BA"><span class="toc-list-text">提示</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#%E5%8F%82%E8%80%83%E4%BB%A3%E7%A0%81"><span class="toc-list-text">参考代码</span></a></li></ol></li></ol></div></div></aside></div></div><div id="toolbar" hide=""><div id="toolbar-setting-container" hide=""><div class="toolbar-item"><button id="tool-color-mode" title="深色模式" type="button"><img src="/ZLS_BIANCHENG/assets/images/svg/ta/ta-moon.svg" class="icon noview" alt="Icon"></button></div><div class="toolbar-item"><button class="copy-text" id="tool-share" title="分享" type="button" data-text="https://qingkechuang.github.io/2026/03/27/%E5%85%A5%E9%97%A8/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E6%B2%BB%E7%96%97%E8%8D%AF%E6%B0%B4%E6%95%88%E6%9E%9C%E5%88%A4%E6%96%AD/"><img src="/ZLS_BIANCHENG/assets/images/svg/ta/ta-share.svg" class="icon noview" alt="Icon"></button></div><div class="toolbar-item"><button id="tool-font-size-plus" title="放大字体" type="button"><img src="/ZLS_BIANCHENG/assets/images/svg/ta/ta-text-plus.svg" class="icon noview" alt="Icon"></button></div><div class="toolbar-item"><button id="tool-font-size-minus" title="缩小字体" type="button"><img src="/ZLS_BIANCHENG/assets/images/svg/ta/ta-text-minus.svg" class="icon noview" alt="Icon"></button></div></div><div class="toolbar-container"><div class="toolbar-item"><button id="tool-setting" title="设置" type="button"><img src="/ZLS_BIANCHENG/assets/images/svg/ta/ta-setting.svg" class="icon noview" alt="Icon"></button></div><div class="toolbar-item"><button id="tool-toc" title="目录" type="button"><img src="/ZLS_BIANCHENG/assets/images/svg/ta/ta-toc.svg" class="icon noview" alt="Icon"></button></div><div class="toolbar-item"><button id="tool-gototop" title="返回顶部" type="button"><img src="/ZLS_BIANCHENG/assets/images/svg/ta/ta-up.svg" class="icon noview" alt="Icon"></button></div></div></div><div id="music-player"></div></main><footer><div class="footer"><div id="footer-copyright">© 2024 - 2026 <span>💗</span> <a href="/ZLS_BIANCHENG/null">周老师</a></div><div id="footer-info"><div id="footer-framework">🚀本站由 <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/chanwj/hexo-theme-meow" title="3.3.1" target="_blank">Meow</a> 强力驱动</div><div id="footer-runtime"><span id="runtime" data-startdate="2024-04-02T22:16:20.000Z">🌻已稳定运行.年.月.天</span></div></div></div></footer><div class="scripts"><script>const GLOBALCONFIG = {
   root: '/ZLS_BIANCHENG/',
   toolbar: true,
   lazyload_src: '/ZLS_BIANCHENG/assets/images/Meow-Loading.webp',
