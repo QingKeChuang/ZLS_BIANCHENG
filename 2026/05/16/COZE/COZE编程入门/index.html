@@ -1,0 +1,589 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="author" content="周老师"/><meta name="copyright" content="周老师"/><meta name="theme-color" content="#FFB347"/><meta name="format-detection" content="telephone=no"/><meta name="keywords" content="AI"/><meta name="mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-touch-fullscreen" content="yes"/><meta name="application-name" content="COZE编程入门 | 周老师的编程课堂"/><meta name="apple-mobile-web-app-title" content="COZE编程入门 | 周老师的编程课堂"/><meta name="apple-mobile-web-app-status-bar-style" content="#FFB347"/><link rel="canonical" href="https://qingkechuang.github.io/2026/05/16/COZE/COZE编程入门/"/><meta name="description" content="🤖 扣子编程入门使用教程 嗨，小朋友！你是不是觉得写代码很酷，但又觉得编程好难学？🤔别担心！今天我要给你介绍一个新朋友——扣子编程！用它，你只要会聊天，就能做出超厉害的东西！🎉   📚 目录 什么是扣子编程？ 扣子编程能做什么？ 和普通AI聊天有什么区别？ 如何给AI写”工作说明书”——提示词 提示词的四件法宝 超好用的提示词模板 写提示词的小技巧 这些坑不要踩！ 动手试一试！ 学习...">
+<meta property="og:type" content="article">
+<meta property="og:title" content="COZE编程入门 | 周老师的编程课堂">
+<meta property="og:url" content="https://qingkechuang.github.io/2026/05/16/COZE/COZE%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8/index.html">
+<meta property="og:site_name" content="周老师的编程课堂">
+<meta property="og:description" content="🤖 扣子编程入门使用教程 嗨，小朋友！你是不是觉得写代码很酷，但又觉得编程好难学？🤔别担心！今天我要给你介绍一个新朋友——扣子编程！用它，你只要会聊天，就能做出超厉害的东西！🎉   📚 目录 什么是扣子编程？ 扣子编程能做什么？ 和普通AI聊天有什么区别？ 如何给AI写”工作说明书”——提示词 提示词的四件法宝 超好用的提示词模板 写提示词的小技巧 这些坑不要踩！ 动手试一试！ 学习...">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://qingkechuang.github.io/2026/05/16/COZE/COZE%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8/assets/images/Hexo-Theme-MEOW.png">
+<meta property="article:published_time" content="2026-05-16T03:41:00.000Z">
+<meta property="article:modified_time" content="2026-05-16T03:41:51.359Z">
+<meta property="article:author" content="周老师">
+<meta property="article:tag" content="AI">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://qingkechuang.github.io/2026/05/16/COZE/COZE%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8/assets/images/Hexo-Theme-MEOW.png"><meta name="robots" content="index,follow"/><meta name="googlebot" content="index,follow"/><meta name="revisit-after" content="1 days"/><title>COZE编程入门 | 周老师的编程课堂</title><link rel="shortcut icon" href="/ZLS_BIANCHENG/assets/images/Hexo-Theme-MEOW.ico"><link rel="preconnect" href="/ZLS_BIANCHENG/assets"/><link rel="preconnect" href="assets"/>
+<link rel="stylesheet" href="/ZLS_BIANCHENG/css/style.css">
+
+<link rel="stylesheet" href="/ZLS_BIANCHENG/css/third-party/dist/APlayer.min.css">
+<link rel="prefetch" href="/ZLS_BIANCHENG/"/><link rel="prefetch" href="/ZLS_BIANCHENG/archives"/><link rel="prefetch" href="/ZLS_BIANCHENG/tags"/><meta name="generator" content="Hexo 8.1.1"><style>
+mjx-container{
+  padding: 0 0 !important
+}
+mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head><body bg-style="none"><div class="post-progressbar-container"><div class="post-progressbar"></div></div><header><div id="navbar"><div id="nav-info"><a id="site-icon" href="/ZLS_BIANCHENG/" title="主页"><img src="/ZLS_BIANCHENG/assets/images/Hexo-Theme-MEOW.png" alt="Logo"/></a><a id="site-name" href="/ZLS_BIANCHENG/" title="主页"><div>周老师的编程课堂</div><img src="/ZLS_BIANCHENG/assets/images/svg/uc/uc-home.svg" class="icon noview" alt="Icon"></a></div><div id="nav-menu"></div><div id="nav-function"><div id="menu-btn"><a href="javascript:void(0);" title="打开菜单"><img src="/ZLS_BIANCHENG/assets/images/svg/uc/uc-menu.svg" class="icon noview" alt="Icon"></a></div></div></div></header><div id="menu-aside"><div id="menu-aside-container"><div id="menu-aside-info"><a href="/ZLS_BIANCHENG/" title="主页"><img src="/ZLS_BIANCHENG/assets/images/Hexo-Theme-MEOW.png" alt="Logo"/></a><a href="/ZLS_BIANCHENG/" title="主页">周老师的编程课堂</a></div><hr/></div></div><main><div class="banner"><div class="banner-info"><div class="banner-avatar"><img src="/ZLS_BIANCHENG/assets/images/Hexo-Theme-MEOW.png" alt="Avatar"/></div><div class="banner-title">「 欢迎来到周老师的编程世界 」</div></div></div><div class="post-container"><div class="post-main"><div class="post-content"><h1 class="post-title">COZE编程入门</h1><div class="post-author"><span>作者: 周老师</span></div><div class="post-meta"><div class="post-info"><div class="post-date"><div class="post-pubdate"><img src="/ZLS_BIANCHENG/assets/images/svg/ta/ta-pubdate.svg" class="icon noview" alt="Icon"><span>发表于2026-05-16</span></div><div class="post-update"><img src="/ZLS_BIANCHENG/assets/images/svg/ta/ta-update.svg" class="icon noview" alt="Icon"><span>更新于2026-05-16</span></div></div><div class="post-read"></div></div><div class="post-attribute"><div class="post-categories"><img src="/ZLS_BIANCHENG/assets/images/svg/ta/ta-category.svg" class="icon noview" alt="Icon"><span><a class="post-categories-link" href="/ZLS_BIANCHENG/categories/AI/">AI</a></span></div><div class="post-tags"><img src="/ZLS_BIANCHENG/assets/images/svg/ta/ta-tag.svg" class="icon noview" alt="Icon"><span><a class="post-tags-link" href="/ZLS_BIANCHENG/tags/AI/" rel="tag">AI</a></span></div></div></div><div class="post markdown" indent="false"><h1 id="🤖-扣子编程入门使用教程"><a href="#🤖-扣子编程入门使用教程" class="headerlink" title="🤖 扣子编程入门使用教程"></a>🤖 扣子编程入门使用教程</h1><blockquote>
+<p>嗨，小朋友！你是不是觉得写代码很酷，但又觉得编程好难学？🤔<br>别担心！今天我要给你介绍一个新朋友——<strong>扣子编程</strong>！<br>用它，你只要会聊天，就能做出超厉害的东西！🎉</p>
+</blockquote>
+<hr>
+<h2 id="📚-目录"><a href="#📚-目录" class="headerlink" title="📚 目录"></a>📚 目录</h2><ol>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%89%A3%E5%AD%90%E7%BC%96%E7%A8%8B">什么是扣子编程？</a></li>
+<li><a href="#%E6%89%A3%E5%AD%90%E7%BC%96%E7%A8%8B%E8%83%BD%E5%81%9A%E4%BB%80%E4%B9%88">扣子编程能做什么？</a></li>
+<li><a href="#%E5%92%8C%E6%99%AE%E9%80%9Aai%E8%81%8A%E5%A4%A9%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB">和普通AI聊天有什么区别？</a></li>
+<li><a href="#%E5%A6%82%E4%BD%95%E7%BB%99ai%E5%86%99%E5%B7%A5%E4%BD%9C%E8%AF%B4%E6%98%8E%E4%B9%A6%E2%80%94%E2%80%94%E6%8F%90%E7%A4%BA%E8%AF%8D">如何给AI写”工作说明书”——提示词</a></li>
+<li><a href="#%E6%8F%90%E7%A4%BA%E8%AF%8D%E7%9A%84%E5%9B%9B%E4%BB%B6%E6%B3%95%E5%AE%9D">提示词的四件法宝</a></li>
+<li><a href="#%E8%B6%85%E5%A5%BD%E7%94%A8%E7%9A%84%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%A8%A1%E6%9D%BF">超好用的提示词模板</a></li>
+<li><a href="#%E5%86%99%E6%8F%90%E7%A4%BA%E8%AF%8D%E7%9A%84%E5%B0%8F%E6%8A%80%E5%B7%A7">写提示词的小技巧</a></li>
+<li><a href="#%E8%BF%99%E4%BA%9B%E5%9D%91%E4%B8%8D%E8%A6%81%E8%B8%A9">这些坑不要踩！</a></li>
+<li><a href="#%E5%8A%A8%E6%89%8B%E8%AF%95%E4%B8%80%E8%AF%95">动手试一试！</a></li>
+<li><a href="#%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93">学习总结</a></li>
+</ol>
+<hr>
+<h2 id="🎯-什么是扣子编程？"><a href="#🎯-什么是扣子编程？" class="headerlink" title="🎯 什么是扣子编程？"></a>🎯 什么是扣子编程？</h2><p>想象一下，<strong>扣子编程</strong>就像是一个超级聪明的机器人助手！</p>
+<p>🤖 <strong>打个比方</strong>：<br>如果你想造一座城堡，但不知道怎么用砖头一块一块垒起来，传统编程就是让你先去学怎么烧砖、和泥、切割石块……太麻烦了！</p>
+<p>而扣子编程呢？就像有一个魔法助手，你跟它说：”帮我造一个城堡！”它就会帮你把城堡造好！✨</p>
+<h3 id="📖-扣子编程的官方介绍"><a href="#📖-扣子编程的官方介绍" class="headerlink" title="📖 扣子编程的官方介绍"></a>📖 扣子编程的官方介绍</h3><p><strong>扣子编程</strong>（网址：<a target="_blank" rel="noopener" href="https://code.coze.cn)是**字节跳动**推出的/">https://code.coze.cn）是**字节跳动**推出的</a> AI 驱动应用开发平台。</p>
+<p>它的核心理念超酷：<strong>“让不会编程的人也能做开发”</strong> 💪</p>
+<p>简单来说，就是：</p>
+<blockquote>
+<p>你用<strong>聊天的普通话说出你想要的东西</strong>，AI就会帮你把代码写好、程序做好！</p>
+</blockquote>
+<p>🎮 <strong>现在的扣子编程还处于免费公测阶段</strong>，小学生也可以免费使用哦！</p>
+<hr>
+<h2 id="🔧-扣子编程能做什么？"><a href="#🔧-扣子编程能做什么？" class="headerlink" title="🔧 扣子编程能做什么？"></a>🔧 扣子编程能做什么？</h2><p>扣子编程就像一个神奇的百宝箱，里面有四种超棒的”魔法工具”！让我们一起来看看吧！👀</p>
+<h3 id="1️⃣-智能体（Bot-Agent）——你的超级小助手"><a href="#1️⃣-智能体（Bot-Agent）——你的超级小助手" class="headerlink" title="1️⃣ 智能体（Bot/Agent）——你的超级小助手"></a>1️⃣ 智能体（Bot/Agent）——你的超级小助手</h3><p>🤖 <strong>想象一下</strong>：你有一个24小时不打盹的小助手，随时帮你做事！</p>
+<p><strong>能做什么？</strong></p>
+<ul>
+<li>📖 <strong>故事助手</strong>：给它一个开头，它就能帮你把故事编完！</li>
+<li>📚 <strong>学习伙伴</strong>：不懂的题目问它，它会耐心教你</li>
+<li>🗣️ <strong>口语陪练</strong>：和你对话练习英语</li>
+<li>🧮 <strong>数学小老师</strong>：一步一步教你做数学题</li>
+</ul>
+<hr>
+<h3 id="2️⃣-工作流（Workflow）——自动化的流水线"><a href="#2️⃣-工作流（Workflow）——自动化的流水线" class="headerlink" title="2️⃣ 工作流（Workflow）——自动化的流水线"></a>2️⃣ 工作流（Workflow）——自动化的流水线</h3><p>🏭 <strong>打个比方</strong>：想象一下麦当劳做汉堡的流水线，每个步骤都有固定顺序。</p>
+<p><strong>能做什么？</strong></p>
+<ul>
+<li>自动回复粉丝留言</li>
+<li>每天定时整理收集的信息</li>
+<li>按照步骤一步步完成任务</li>
+</ul>
+<hr>
+<h3 id="3️⃣-网页应用（Web-App）——做出小游戏网站！"><a href="#3️⃣-网页应用（Web-App）——做出小游戏网站！" class="headerlink" title="3️⃣ 网页应用（Web App）——做出小游戏网站！"></a>3️⃣ 网页应用（Web App）——做出小游戏网站！</h3><p>🎮 <strong>最酷的来了</strong>：你可以做出一个可以玩的小游戏网站！</p>
+<p><strong>能做什么？</strong></p>
+<ul>
+<li>🎯 猜数字游戏网页</li>
+<li>🧩 简单的小测验网页</li>
+<li>📝 待办事项清单网页</li>
+<li>🎨 小画家网页</li>
+</ul>
+<hr>
+<h3 id="4️⃣-移动应用（Mobile-App）——做出手机APP！"><a href="#4️⃣-移动应用（Mobile-App）——做出手机APP！" class="headerlink" title="4️⃣ 移动应用（Mobile App）——做出手机APP！"></a>4️⃣ 移动应用（Mobile App）——做出手机APP！</h3><p>📱 对的！你没看错！还可以做出手机上的APP！</p>
+<hr>
+<h3 id="🔀-两种开发方式"><a href="#🔀-两种开发方式" class="headerlink" title="🔀 两种开发方式"></a>🔀 两种开发方式</h3><p>扣子编程给了你<strong>两种”施法方式”</strong>，总有一款适合你！</p>
+<h4 id="✨-AI编程（Vibe-Coding）——说话就能写代码！"><a href="#✨-AI编程（Vibe-Coding）——说话就能写代码！" class="headerlink" title="✨ AI编程（Vibe Coding）——说话就能写代码！"></a>✨ AI编程（Vibe Coding）——说话就能写代码！</h4><blockquote>
+<p>就像你在施魔法！用<strong>自然语言</strong>描述你想要什么，AI就帮你写代码！</p>
+</blockquote>
+<p><strong>适合</strong>：想象力丰富、喜欢用文字表达的小朋友！</p>
+<h4 id="🧩-低代码开发——像搭积木一样！"><a href="#🧩-低代码开发——像搭积木一样！" class="headerlink" title="🧩 低代码开发——像搭积木一样！"></a>🧩 低代码开发——像搭积木一样！</h4><blockquote>
+<p>不用写代码，只需要<strong>拖拽</strong>各种小积木块，搭出你的程序！</p>
+</blockquote>
+<p><strong>适合</strong>：喜欢动手操作、视觉学习的小朋友！</p>
+<hr>
+<h2 id="🤔-和普通AI聊天有什么区别？"><a href="#🤔-和普通AI聊天有什么区别？" class="headerlink" title="🤔 和普通AI聊天有什么区别？"></a>🤔 和普通AI聊天有什么区别？</h2><p>这是一个超级重要的问题！让我们来玩个对比游戏！🎮</p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>对比项</th>
+<th>普通AI聊天（如豆包）</th>
+<th>扣子编程</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>🔑 <strong>能做什么</strong></td>
+<td>回答你的问题</td>
+<td><strong>做出东西</strong></td>
+</tr>
+<tr>
+<td>🎨 <strong>输出类型</strong></td>
+<td>文字回答</td>
+<td>完整的应用/工具</td>
+</tr>
+<tr>
+<td>🎮 <strong>打个比方</strong></td>
+<td>问路，它告诉你怎么走</td>
+<td>问路，它不仅告诉你，还给你一张地图、甚至帮你叫一辆车！</td>
+</tr>
+<tr>
+<td>💡 <strong>实际例子</strong></td>
+<td>“给我讲个故事”→它讲一个故事</td>
+<td>“给我做一个故事生成器”→它做出一个可以反复用的故事生成工具</td>
+</tr>
+</tbody></table></div>
+<h3 id="🎯-记住这个核心区别："><a href="#🎯-记住这个核心区别：" class="headerlink" title="🎯 记住这个核心区别："></a>🎯 记住这个核心区别：</h3><blockquote>
+<p><strong>普通AI = 回答问题的老师</strong> 📝<br><strong>扣子编程 = 能帮你做东西的工程师</strong> 🔧</p>
+</blockquote>
+<hr>
+<h2 id="📝-如何给AI写”工作说明书”——提示词"><a href="#📝-如何给AI写”工作说明书”——提示词" class="headerlink" title="📝 如何给AI写”工作说明书”——提示词"></a>📝 如何给AI写”工作说明书”——提示词</h2><p>好啦！现在你知道扣子编程是什么了。接下来，我们来学习最重要的技能：<strong>写提示词</strong>！💪</p>
+<h3 id="🤔-什么是提示词？"><a href="#🤔-什么是提示词？" class="headerlink" title="🤔 什么是提示词？"></a>🤔 什么是提示词？</h3><p><strong>提示词</strong>（Prompt）就是给AI的”工作说明书”！</p>
+<p>🤖 <strong>打个比方</strong>：<br>就像你去奶茶店点单，如果你只说”来杯饮料”，店员可能会一头雾水 😵‍💫<br>但如果你说”我要一杯大杯、少冰、半糖、加椰果的珍珠奶茶”，店员就清清楚楚啦！🎯</p>
+<p><strong>提示词就是你和AI点单的”配方”！</strong></p>
+<hr>
+<h2 id="🧙‍♂️-提示词的四件法宝"><a href="#🧙‍♂️-提示词的四件法宝" class="headerlink" title="🧙‍♂️ 提示词的四件法宝"></a>🧙‍♂️ 提示词的四件法宝</h2><p>想要写出好的提示词，你需要掌握<strong>四个法宝</strong>！把它们组合起来，AI就能乖乖听你的话啦！</p>
+<hr>
+<h3 id="🗡️-法宝一：角色设定-——-告诉AI”你是谁”"><a href="#🗡️-法宝一：角色设定-——-告诉AI”你是谁”" class="headerlink" title="🗡️ 法宝一：角色设定 —— 告诉AI”你是谁”"></a>🗡️ 法宝一：角色设定 —— 告诉AI”你是谁”</h3><p>🎭 <strong>这是最重要的！</strong> 因为角色决定了这个AI的说话风格和专业方向。</p>
+<p><strong>示例</strong>：</p>
+<div class="code-container" code-lang="Plaintext"><div class="codebox"><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 角色</span><br><span class="line">你是一个面向8岁小朋友的讲故事助手</span><br><span class="line">你说话要温柔、有趣，像妈妈讲故事一样</span><br></pre></td></tr></table></figure><div class="code-fold" title="Fold/Open"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg></div><div class="code-copy" title="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"  stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg></div></div></div>
+
+<p><strong>不同角色有不同的说话风格</strong>：</p>
+<ul>
+<li>👨‍🏫 <strong>老师风格</strong>：严肃但耐心，喜欢解释”为什么”</li>
+<li>👧 <strong>小朋友风格</strong>：活泼可爱，用”呀、呢、哦”等语气词</li>
+<li>🦸 <strong>超级英雄风格</strong>：充满力量感，爱说”放心吧交给我！”</li>
+</ul>
+<hr>
+<h3 id="🎯-法宝二：核心任务-——-告诉AI”要做什么”"><a href="#🎯-法宝二：核心任务-——-告诉AI”要做什么”" class="headerlink" title="🎯 法宝二：核心任务 —— 告诉AI”要做什么”"></a>🎯 法宝二：核心任务 —— 告诉AI”要做什么”</h3><p><strong>这是最核心的部分！要清楚地告诉AI你需要它完成什么任务。</strong></p>
+<p><strong>示例</strong>：</p>
+<div class="code-container" code-lang="Plaintext"><div class="codebox"><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 任务</span><br><span class="line">1. 根据小朋友给的开头，续写一个有趣的童话故事</span><br><span class="line">2. 故事要有教育意义</span><br><span class="line">3. 每讲完一段，要问小朋友"接下来你想发生什么？"</span><br></pre></td></tr></table></figure><div class="code-fold" title="Fold/Open"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg></div><div class="code-copy" title="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"  stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg></div></div></div>
+
+<p><strong>⚠️ 注意</strong>：</p>
+<ul>
+<li>✅ 说清楚要做什么（续写故事？）</li>
+<li>✅ 说清楚做到什么程度（故事要多长？）</li>
+<li>✅ 说清楚有什么特别要求（要有教育意义？）</li>
+</ul>
+<hr>
+<h3 id="🚫-法宝三：约束规则-——-告诉AI”不能做什么”"><a href="#🚫-法宝三：约束规则-——-告诉AI”不能做什么”" class="headerlink" title="🚫 法宝三：约束规则 —— 告诉AI”不能做什么”"></a>🚫 法宝三：约束规则 —— 告诉AI”不能做什么”</h3><p><strong>这一步很重要！它能防止AI乱说话、跑题、或者给出不合适的回答。</strong></p>
+<p><strong>示例</strong>：</p>
+<div class="code-container" code-lang="Plaintext"><div class="codebox"><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 限制</span><br><span class="line">1. 不能讲恐怖、血腥的故事</span><br><span class="line">2. 不能出现暴力情节</span><br><span class="line">3. 不能在故事里植入广告</span><br><span class="line">4. 如果小朋友的问题不合适，要温柔地拒绝并转移话题</span><br></pre></td></tr></table></figure><div class="code-fold" title="Fold/Open"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg></div><div class="code-copy" title="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"  stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg></div></div></div>
+
+<p><strong>常见的限制类型</strong>：</p>
+<ul>
+<li>🚫 <strong>内容限制</strong>：不能出现XXX内容</li>
+<li>📏 <strong>范围限制</strong>：只能讲什么范围的故事</li>
+<li>🎯 <strong>格式限制</strong>：输出格式必须是什么样子</li>
+<li>😊 <strong>态度限制</strong>：要保持什么态度（耐心、温柔等）</li>
+</ul>
+<hr>
+<h3 id="📋-法宝四：回复格式-——-告诉AI”怎么回答”"><a href="#📋-法宝四：回复格式-——-告诉AI”怎么回答”" class="headerlink" title="📋 法宝四：回复格式 —— 告诉AI”怎么回答”"></a>📋 法宝四：回复格式 —— 告诉AI”怎么回答”</h3><p><strong>规定输出的格式，让AI的回答整整齐齐！</strong></p>
+<p><strong>示例</strong>：</p>
+<div class="code-container" code-lang="Plaintext"><div class="codebox"><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 输出格式</span><br><span class="line">1. 先讲一段故事（约100字）</span><br><span class="line">2. 结尾用问句引发思考</span><br><span class="line">3. 最后加一个"😄这个故事你喜欢吗？"</span><br></pre></td></tr></table></figure><div class="code-fold" title="Fold/Open"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg></div><div class="code-copy" title="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"  stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg></div></div></div>
+
+<p><strong>常用格式指令</strong>：</p>
+<ul>
+<li>📝 使用Markdown格式输出</li>
+<li>📊 分点列出</li>
+<li>💬 用对话形式回复</li>
+<li>🎨 用emoji装饰内容</li>
+</ul>
+<hr>
+<h2 id="📖-超好用的提示词模板"><a href="#📖-超好用的提示词模板" class="headerlink" title="📖 超好用的提示词模板"></a>📖 超好用的提示词模板</h2><p>下面给你几个<strong>可以直接用</strong>的提示词模板！快来抄作业！📝</p>
+<hr>
+<h3 id="📚-模板一：故事大王-👑"><a href="#📚-模板一：故事大王-👑" class="headerlink" title="📚 模板一：故事大王 👑"></a>📚 模板一：故事大王 👑</h3><div class="code-container" code-lang="Markdown"><div class="codebox"><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 角色</span></span><br><span class="line">你是一个专为小学生（7-12岁）讲故事的故事大王助手。</span><br><span class="line">你讲的故事要：</span><br><span class="line"><span class="bullet">-</span> 有趣、充满想象力</span><br><span class="line"><span class="bullet">-</span> 适合小朋友听</span><br><span class="line"><span class="bullet">-</span> 包含简单的道理</span><br><span class="line">你说话的语气要温柔活泼，像一个大朋友在聊天。</span><br><span class="line"></span><br><span class="line"><span class="section"># 任务</span></span><br><span class="line">根据小朋友给你的故事开头，续写一个精彩的童话故事。</span><br><span class="line"></span><br><span class="line"><span class="section"># 限制</span></span><br><span class="line"><span class="bullet">-</span> 不能有恐怖、血腥内容</span><br><span class="line"><span class="bullet">-</span> 不能有暴力情节</span><br><span class="line"><span class="bullet">-</span> 故事长度适中（200-500字）</span><br><span class="line"><span class="bullet">-</span> 如果小朋友要求讲不适合的内容，要温柔拒绝</span><br><span class="line"></span><br><span class="line"><span class="section"># 回复格式</span></span><br><span class="line"><span class="bullet">1.</span> 先讲一段故事</span><br><span class="line"><span class="bullet">2.</span> 结尾用问句引发想象</span><br><span class="line"><span class="bullet">3.</span> 结尾加个可爱的emoji</span><br><span class="line"><span class="bullet">4.</span> 问小朋友"还想听什么类型的故事呀？"</span><br></pre></td></tr></table></figure><div class="code-fold" title="Fold/Open"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg></div><div class="code-copy" title="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"  stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg></div></div></div>
+
+<hr>
+<h3 id="🧩-模板二：成语小达人-📖"><a href="#🧩-模板二：成语小达人-📖" class="headerlink" title="🧩 模板二：成语小达人 📖"></a>🧩 模板二：成语小达人 📖</h3><div class="code-container" code-lang="Markdown"><div class="codebox"><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 角色</span></span><br><span class="line">你是一个成语小达人，专门帮助小学生学习和使用成语。</span><br><span class="line">你说话有趣，会用生动的例子解释成语。</span><br><span class="line">你会像朋友一样和小朋友聊天。</span><br><span class="line"></span><br><span class="line"><span class="section"># 任务</span></span><br><span class="line"><span class="bullet">1.</span> 解释小朋友问的成语是什么意思</span><br><span class="line"><span class="bullet">2.</span> 讲一个使用这个成语的小故事</span><br><span class="line"><span class="bullet">3.</span> 告诉小朋友在什么情况下可以用这个成语</span><br><span class="line"></span><br><span class="line"><span class="section"># 限制</span></span><br><span class="line"><span class="bullet">-</span> 解释要简单易懂</span><br><span class="line"><span class="bullet">-</span> 故事要贴合小学生的日常生活</span><br><span class="line"><span class="bullet">-</span> 不能使用小朋友理解不了的复杂词汇</span><br><span class="line"></span><br><span class="line"><span class="section"># 回复格式</span></span><br><span class="line">用以下格式回复：</span><br><span class="line">📚 <span class="strong">**成语**</span>：[成语名字]</span><br><span class="line">📖 <span class="strong">**意思**</span>：[简单解释]</span><br><span class="line">🎭 <span class="strong">**故事**</span>：[小故事]</span><br><span class="line">💡 <span class="strong">**怎么用**</span>：[使用场景]</span><br><span class="line">😄 <span class="strong">**小练习**</span>：[一个小问题]</span><br></pre></td></tr></table></figure><div class="code-fold" title="Fold/Open"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg></div><div class="code-copy" title="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"  stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg></div></div></div>
+
+<hr>
+<h3 id="📝-模板三：作业小帮手-📐"><a href="#📝-模板三：作业小帮手-📐" class="headerlink" title="📝 模板三：作业小帮手 📐"></a>📝 模板三：作业小帮手 📐</h3><div class="code-container" code-lang="Markdown"><div class="codebox"><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 角色</span></span><br><span class="line">你是一个耐心的作业小帮手，专门帮助小学生解决学习问题。</span><br><span class="line">你像同桌的好朋友一样，会一步一步教小朋友。</span><br><span class="line">你说话要清楚、有耐心，永远不会不耐烦。</span><br><span class="line"></span><br><span class="line"><span class="section"># 任务</span></span><br><span class="line"><span class="bullet">1.</span> 帮助解答数学、语文、英语问题</span><br><span class="line"><span class="bullet">2.</span> 讲解难题时要一步一步来</span><br><span class="line"><span class="bullet">3.</span> 鼓励小朋友</span><br><span class="line"></span><br><span class="line"><span class="section"># 限制</span></span><br><span class="line"><span class="bullet">1.</span> 如果是选择题，要先解释为什么其他选项不对</span><br><span class="line"><span class="bullet">2.</span> 如果是应用题，必须写出解题步骤</span><br><span class="line"><span class="bullet">3.</span> 不能直接告诉答案，要先引导思考</span><br><span class="line"><span class="bullet">4.</span> 永远不要说"太简单了，你怎么不会"</span><br><span class="line"></span><br><span class="line"><span class="section"># 回复格式</span></span><br><span class="line"><span class="bullet">-</span> 先夸一夸小朋友的进步</span><br><span class="line"><span class="bullet">-</span> 一步一步讲解</span><br><span class="line"><span class="bullet">-</span> 每一步都要问"明白了吗？"</span><br><span class="line"><span class="bullet">-</span> 结尾要鼓励小朋友</span><br></pre></td></tr></table></figure><div class="code-fold" title="Fold/Open"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg></div><div class="code-copy" title="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"  stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg></div></div></div>
+
+<hr>
+<h2 id="💡-写提示词的小技巧"><a href="#💡-写提示词的小技巧" class="headerlink" title="💡 写提示词的小技巧"></a>💡 写提示词的小技巧</h2><h3 id="✅-技巧一：要具体，不要模糊"><a href="#✅-技巧一：要具体，不要模糊" class="headerlink" title="✅ 技巧一：要具体，不要模糊"></a>✅ 技巧一：要具体，不要模糊</h3><div class="table-container"><table>
+<thead>
+<tr>
+<th>❌ 模糊的写法</th>
+<th>✅ 具体的写法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>“给我讲个故事”</td>
+<td>“给我讲一个关于小动物的故事，300字左右”</td>
+</tr>
+<tr>
+<td>“回答问题”</td>
+<td>“用选择题的形式回答，每个选项后面加简单解释”</td>
+</tr>
+<tr>
+<td>“写一首诗”</td>
+<td>“写一首5言绝句，主题是春天，要押ang韵”</td>
+</tr>
+</tbody></table></div>
+<hr>
+<h3 id="✅-技巧二：要简单，一次只说一件事"><a href="#✅-技巧二：要简单，一次只说一件事" class="headerlink" title="✅ 技巧二：要简单，一次只说一件事"></a>✅ 技巧二：要简单，一次只说一件事</h3><p><strong>🤖 AI不是超人！一次让它做太多事情，它可能会混乱。</strong></p>
+<p>❌ <strong>太复杂</strong>：</p>
+<div class="code-container" code-lang="Plaintext"><div class="codebox"><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">帮我做一个东西，它是一个聊天机器人，可以回答问题，可以讲故事，</span><br><span class="line">可以做数学题，还可以玩文字游戏，但是不能太难，要适合小学生，</span><br><span class="line">颜色要好看，字体要大......</span><br></pre></td></tr></table></figure><div class="code-fold" title="Fold/Open"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg></div><div class="code-copy" title="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"  stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg></div></div></div>
+
+<p>✅ <strong>分开来说</strong>：</p>
+<div class="code-container" code-lang="Plaintext"><div class="codebox"><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">先做第一版：做一个专门讲故事给小学生听的聊天机器人</span><br><span class="line">（等这个做好了，再慢慢加新功能）</span><br></pre></td></tr></table></figure><div class="code-fold" title="Fold/Open"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg></div><div class="code-copy" title="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"  stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg></div></div></div>
+
+<hr>
+<h3 id="✅-技巧三：要举例，给AI看看你想要什么"><a href="#✅-技巧三：要举例，给AI看看你想要什么" class="headerlink" title="✅ 技巧三：要举例，给AI看看你想要什么"></a>✅ 技巧三：要举例，给AI看看你想要什么</h3><p><strong>🎯 例子是最好的说明！</strong></p>
+<div class="code-container" code-lang="Markdown"><div class="codebox"><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 任务</span></span><br><span class="line">帮我写一首关于学习的诗</span><br><span class="line"></span><br><span class="line"><span class="section"># 格式要求</span></span><br><span class="line">按照这个例子来写：</span><br><span class="line">例子：</span><br><span class="line">题目：小书包</span><br><span class="line">内容：我的小书包/装着大大的梦想/每天背着它/走向知识的远方</span><br><span class="line"></span><br><span class="line">（你的诗也要有：题目 + 4行诗）</span><br></pre></td></tr></table></figure><div class="code-fold" title="Fold/Open"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg></div><div class="code-copy" title="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"  stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg></div></div></div>
+
+<hr>
+<h3 id="✅-技巧四：用Markdown格式写提示词"><a href="#✅-技巧四：用Markdown格式写提示词" class="headerlink" title="✅ 技巧四：用Markdown格式写提示词"></a>✅ 技巧四：用Markdown格式写提示词</h3><p>Markdown就像给文字加上了”装修”！</p>
+<p><strong>常用格式</strong>：</p>
+<div class="code-container" code-lang="Markdown"><div class="codebox"><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 一级标题（一篇文章只有一个）</span></span><br><span class="line"><span class="section">## 二级标题（每个部分用这个）</span></span><br><span class="line"><span class="section">### 三级标题（具体内容用这个）</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> 这是列表（圆点）</span><br><span class="line"><span class="bullet">1.</span> 这是编号列表</span><br><span class="line"></span><br><span class="line"><span class="strong">**这是加粗**</span>（重要的内容）</span><br><span class="line"></span><br><span class="line"><span class="code">`这是代码框`</span>（展示格式或示例）</span><br></pre></td></tr></table></figure><div class="code-fold" title="Fold/Open"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg></div><div class="code-copy" title="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"  stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg></div></div></div>
+
+<hr>
+<h2 id="⚠️-这些坑不要踩！"><a href="#⚠️-这些坑不要踩！" class="headerlink" title="⚠️ 这些坑不要踩！"></a>⚠️ 这些坑不要踩！</h2><p>学习路上有坑，绕过去就是胜利！💪</p>
+<h3 id="🕳️-坑一：提示词太模糊-→-AI回答跑偏"><a href="#🕳️-坑一：提示词太模糊-→-AI回答跑偏" class="headerlink" title="🕳️ 坑一：提示词太模糊 → AI回答跑偏"></a>🕳️ 坑一：提示词太模糊 → AI回答跑偏</h3><p>❌ <strong>错误示范</strong>：</p>
+<div class="code-container" code-lang="Plaintext"><div class="codebox"><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">讲个故事</span><br></pre></td></tr></table></figure><div class="code-fold" title="Fold/Open"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg></div><div class="code-copy" title="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"  stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg></div></div></div>
+
+<p>✅ <strong>正确做法</strong>：</p>
+<div class="code-container" code-lang="Plaintext"><div class="codebox"><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">讲一个关于勇敢的小蚂蚁的励志故事，300字，适合8岁小朋友听</span><br></pre></td></tr></table></figure><div class="code-fold" title="Fold/Open"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg></div><div class="code-copy" title="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"  stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg></div></div></div>
+
+<hr>
+<h3 id="🕳️-坑二：提示词太复杂-→-AI可能搞混"><a href="#🕳️-坑二：提示词太复杂-→-AI可能搞混" class="headerlink" title="🕳️ 坑二：提示词太复杂 → AI可能搞混"></a>🕳️ 坑二：提示词太复杂 → AI可能搞混</h3><p>❌ <strong>错误示范</strong>：</p>
+<div class="code-container" code-lang="Plaintext"><div class="codebox"><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">帮我做一个聊天机器人，它会讲笑话、会讲故事、会做数学题、</span><br><span class="line">会教英语、会帮你写作文、会陪你聊天、要有好看的界面、</span><br><span class="line">要能记住之前的对话、要有语音识别......</span><br></pre></td></tr></table></figure><div class="code-fold" title="Fold/Open"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg></div><div class="code-copy" title="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"  stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg></div></div></div>
+
+<p>✅ <strong>正确做法</strong>：</p>
+<div class="code-container" code-lang="Plaintext"><div class="codebox"><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">第一阶段：先做一个只会讲笑话的聊天机器人</span><br><span class="line">第二阶段：测试好了，再加"讲故事"的功能</span><br><span class="line">第三阶段：......（一步一步来）</span><br></pre></td></tr></table></figure><div class="code-fold" title="Fold/Open"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg></div><div class="code-copy" title="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"  stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg></div></div></div>
+
+<hr>
+<h3 id="🕳️-坑三：没有限制-→-AI可能乱说"><a href="#🕳️-坑三：没有限制-→-AI可能乱说" class="headerlink" title="🕳️ 坑三：没有限制 → AI可能乱说"></a>🕳️ 坑三：没有限制 → AI可能乱说</h3><p>❌ <strong>错误示范</strong>：</p>
+<div class="code-container" code-lang="Plaintext"><div class="codebox"><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">回答关于科学的问题</span><br><span class="line">（没有任何限制，AI可能会说太长、太复杂、不适合小朋友的内容）</span><br><span class="line"></span><br><span class="line">✅ **正确做法**：</span><br></pre></td></tr></table></figure><div class="code-fold" title="Fold/Open"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg></div><div class="code-copy" title="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"  stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg></div></div></div>
+<p>回答关于科学的问题</p>
+<ul>
+<li>用小学生能理解的语言解释</li>
+<li>每个回答不超过200字</li>
+<li>多用比喻和例子</li>
+<li>如果问题太难，简单说”这个问题对你来说有点难，我们换一个吧”</li>
+</ul>
+<div class="code-container" code-lang="Plaintext"><div class="codebox"><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">### 🪄 小魔法：让AI帮你优化提示词！</span><br><span class="line"></span><br><span class="line">如果你觉得自己的提示词写得不够好，可以试试这个魔法：</span><br><span class="line"></span><br></pre></td></tr></table></figure><div class="code-fold" title="Fold/Open"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg></div><div class="code-copy" title="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"  stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg></div></div></div>
+<p>请帮我优化下面的提示词，让它更清晰、更有效：<br>[粘贴你的提示词]</p>
+<p>要求：</p>
+<ol>
+<li>结构清晰</li>
+<li>容易理解</li>
+<li>效果更好</li>
+</ol>
+<div class="code-container" code-lang="Plaintext"><div class="codebox"><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">**AI会帮你把提示词变得更好用！** ✨</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">## 🎮 动手试一试！</span><br><span class="line"></span><br><span class="line">现在，理论学完了！让我们来真刀真枪地**创建你的第一个智能体**吧！🚀</span><br><span class="line"></span><br><span class="line">### 🎮 案例一：创建"故事大王"智能体</span><br><span class="line"></span><br><span class="line">**预计时间**：10分钟  </span><br><span class="line">**难度**：⭐ 简单  </span><br><span class="line">**需要准备**：扣子账号（可以用抖音账号登录）</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">#### 📝 第一步：写出你的提示词</span><br><span class="line"></span><br><span class="line">```markdown</span><br><span class="line"># 角色</span><br><span class="line">你是一个专为小学生（7-12岁）讲故事的故事大王助手。</span><br><span class="line">你讲的故事要：</span><br><span class="line">- 有趣、充满想象力</span><br><span class="line">- 适合小朋友听</span><br><span class="line">- 包含简单的道理</span><br><span class="line">你说话的语气要温柔活泼，像一个大朋友在聊天。</span><br><span class="line"></span><br><span class="line"># 任务</span><br><span class="line">1. 根据小朋友给你的故事开头，续写一个精彩的童话故事</span><br><span class="line">2. 每讲完一段故事，问小朋友"接下来你想发生什么？"</span><br><span class="line"></span><br><span class="line"># 限制</span><br><span class="line">- 不能有恐怖、血腥内容</span><br><span class="line">- 不能有暴力情节</span><br><span class="line">- 故事长度适中（200-400字）</span><br><span class="line">- 如果小朋友要求讲不适合的内容，要温柔拒绝</span><br><span class="line"></span><br><span class="line"># 回复格式</span><br><span class="line">1. 先讲一段故事</span><br><span class="line">2. 结尾用问句引发想象</span><br><span class="line">3. 结尾加个可爱的emoji</span><br><span class="line">4. 问小朋友"还想听什么类型的故事呀？"</span><br></pre></td></tr></table></figure><div class="code-fold" title="Fold/Open"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg></div><div class="code-copy" title="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"  stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg></div></div></div>
+
+<hr>
+<h4 id="🖥️-第二步：进入扣子编程"><a href="#🖥️-第二步：进入扣子编程" class="headerlink" title="🖥️ 第二步：进入扣子编程"></a>🖥️ 第二步：进入扣子编程</h4><ol>
+<li>打开浏览器，输入 <strong><a target="_blank" rel="noopener" href="https://code.coze.cn/">https://code.coze.cn</a></strong></li>
+<li>点击右上角**”登录”**，用抖音账号登录</li>
+<li>登录成功后，点击左侧**”我的空间”**</li>
+</ol>
+<hr>
+<h4 id="➕-第三步：创建智能体"><a href="#➕-第三步：创建智能体" class="headerlink" title="➕ 第三步：创建智能体"></a>➕ 第三步：创建智能体</h4><ol>
+<li><p>点击**”创建Bot”**按钮（一个大大的 + 号）✨</p>
+</li>
+<li><p>填写信息：</p>
+<ul>
+<li><strong>Bot名称</strong>：输入”故事大王”</li>
+<li><strong>Bot简介</strong>：输入”专门给小朋友讲有趣故事的助手”</li>
+<li>（图标会自动生成，也可以点击”更换”换一个你喜欢的）</li>
+</ul>
+</li>
+<li><p>点击**”确认”**按钮</p>
+</li>
+</ol>
+<hr>
+<h4 id="🎯-第四步：配置提示词"><a href="#🎯-第四步：配置提示词" class="headerlink" title="🎯 第四步：配置提示词"></a>🎯 第四步：配置提示词</h4><ol>
+<li>在左侧找到**”人设与提示词”**设置区域</li>
+<li>把上面写好的提示词<strong>粘贴进去</strong></li>
+<li>点击**”保存”**按钮</li>
+</ol>
+<hr>
+<h4 id="🎉-第五步：测试你的智能体！"><a href="#🎉-第五步：测试你的智能体！" class="headerlink" title="🎉 第五步：测试你的智能体！"></a>🎉 第五步：测试你的智能体！</h4><ol>
+<li>在右侧的**”预览与调试”**区域，有一个对话框</li>
+<li>输入：<code>给我讲一个关于小兔子冒险的故事</code></li>
+<li>看看你的智能体是不是开始讲故事啦？🎊</li>
+</ol>
+<hr>
+<h4 id="✅-检查清单"><a href="#✅-检查清单" class="headerlink" title="✅ 检查清单"></a>✅ 检查清单</h4><ul>
+<li><input disabled="" type="checkbox"> 提示词粘贴正确了吗？</li>
+<li><input disabled="" type="checkbox"> 故事风格是不是活泼可爱的？</li>
+<li><input disabled="" type="checkbox"> 长度适中吗？（不是太长或太短）</li>
+<li><input disabled="" type="checkbox"> 有没有可爱的emoji？🐰</li>
+<li><input disabled="" type="checkbox"> 结尾有没有问问题？</li>
+</ul>
+<hr>
+<h3 id="🎮-案例二：创建”成语小达人”智能体"><a href="#🎮-案例二：创建”成语小达人”智能体" class="headerlink" title="🎮 案例二：创建”成语小达人”智能体"></a>🎮 案例二：创建”成语小达人”智能体</h3><p><strong>预计时间</strong>：15分钟<br><strong>难度</strong>：⭐ 简单<br><strong>技能升级</strong>：比案例一多学一个功能！</p>
+<hr>
+<h4 id="📝-第一步：写出你的提示词"><a href="#📝-第一步：写出你的提示词" class="headerlink" title="📝 第一步：写出你的提示词"></a>📝 第一步：写出你的提示词</h4><div class="code-container" code-lang="Markdown"><div class="codebox"><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 角色</span></span><br><span class="line">你是一个成语小达人，专门帮助小学生学习和使用成语。</span><br><span class="line">你说话有趣，会用生动的例子解释成语。</span><br><span class="line">你会像朋友一样和小朋友聊天，经常用emoji表情。</span><br><span class="line"></span><br><span class="line"><span class="section"># 任务</span></span><br><span class="line">当小朋友问你一个成语时，你要：</span><br><span class="line"><span class="bullet">1.</span> 解释这个成语是什么意思（用简单的语言）</span><br><span class="line"><span class="bullet">2.</span> 讲一个使用这个成语的小故事</span><br><span class="line"><span class="bullet">3.</span> 告诉小朋友在什么情况下可以用这个成语</span><br><span class="line"><span class="bullet">4.</span> 最后出一个小练习考考小朋友</span><br><span class="line"></span><br><span class="line"><span class="section"># 限制</span></span><br><span class="line"><span class="bullet">-</span> 解释要简单易懂，用比喻让小朋友理解</span><br><span class="line"><span class="bullet">-</span> 故事要贴合小学生的日常生活</span><br><span class="line"><span class="bullet">-</span> 不能使用小朋友理解不了的复杂词汇</span><br><span class="line"><span class="bullet">-</span> 每次只解释一个成语</span><br><span class="line"></span><br><span class="line"><span class="section"># 回复格式</span></span><br><span class="line">📚 <span class="strong">**成语**</span>：[成语名字] + 拼音</span><br><span class="line">📖 <span class="strong">**意思**</span>：[用简单的话解释]</span><br><span class="line">🎭 <span class="strong">**故事**</span>：[一个2-3句话的小故事]</span><br><span class="line">💡 <span class="strong">**怎么用**</span>：[告诉小朋友在什么情况下可以用]</span><br><span class="line">❓ <span class="strong">**小练习**</span>：[出一个小问题让小朋友回答]</span><br><span class="line">😄 <span class="strong">**鼓励**</span>：[根据回答给小朋友鼓励]</span><br></pre></td></tr></table></figure><div class="code-fold" title="Fold/Open"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg></div><div class="code-copy" title="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"  stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg></div></div></div>
+
+<hr>
+<h4 id="🖥️-第二步：进入扣子编程-1"><a href="#🖥️-第二步：进入扣子编程-1" class="headerlink" title="🖥️ 第二步：进入扣子编程"></a>🖥️ 第二步：进入扣子编程</h4><ol>
+<li>打开 <strong><a target="_blank" rel="noopener" href="https://code.coze.cn/">https://code.coze.cn</a></strong></li>
+<li>进入**”我的空间”**</li>
+</ol>
+<hr>
+<h4 id="➕-第三步：创建智能体-1"><a href="#➕-第三步：创建智能体-1" class="headerlink" title="➕ 第三步：创建智能体"></a>➕ 第三步：创建智能体</h4><ol>
+<li>点击**”创建Bot”**按钮</li>
+<li>填写信息：<ul>
+<li><strong>Bot名称</strong>：输入”成语小达人”</li>
+<li><strong>Bot简介</strong>：输入”帮助小学生学习成语的好朋友”</li>
+</ul>
+</li>
+<li>点击**”确认”**</li>
+</ol>
+<hr>
+<h4 id="🎯-第四步：配置提示词-1"><a href="#🎯-第四步：配置提示词-1" class="headerlink" title="🎯 第四步：配置提示词"></a>🎯 第四步：配置提示词</h4><ol>
+<li>把上面的提示词<strong>粘贴</strong>到”人设与提示词”区域</li>
+<li>点击**”保存”**</li>
+</ol>
+<hr>
+<h4 id="🎮-第五步：测试！"><a href="#🎮-第五步：测试！" class="headerlink" title="🎮 第五步：测试！"></a>🎮 第五步：测试！</h4><p>在预览对话框输入：</p>
+<div class="code-container" code-lang="Plaintext"><div class="codebox"><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">请问"守株待兔"是什么意思？</span><br></pre></td></tr></table></figure><div class="code-fold" title="Fold/Open"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg></div><div class="code-copy" title="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"  stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg></div></div></div>
+
+<p>看看智能体是怎么回答的！🎉</p>
+<hr>
+<h4 id="🌟-进阶挑战"><a href="#🌟-进阶挑战" class="headerlink" title="🌟 进阶挑战"></a>🌟 进阶挑战</h4><p>测试完成后，试试问这些成语：</p>
+<ul>
+<li>“画蛇添足”</li>
+<li>“亡羊补牢”</li>
+<li>“掩耳盗铃”</li>
+</ul>
+<p>看看智能体解释得好不好！🤔</p>
+<hr>
+<h2 id="📋-学习总结"><a href="#📋-学习总结" class="headerlink" title="📋 学习总结"></a>📋 学习总结</h2><h3 id="🎓-今天我们学到了什么？"><a href="#🎓-今天我们学到了什么？" class="headerlink" title="🎓 今天我们学到了什么？"></a>🎓 今天我们学到了什么？</h3><div class="table-container"><table>
+<thead>
+<tr>
+<th>知识点</th>
+<th>关键内容</th>
+<th>记住一句话</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>什么是扣子编程</td>
+<td>用聊天的方式指挥AI写代码</td>
+<td>“不会编程也能做开发！”</td>
+</tr>
+<tr>
+<td>扣子能做什么</td>
+<td>智能体、工作流、网页应用、移动应用</td>
+<td>“聊天就能做东西！”</td>
+</tr>
+<tr>
+<td>和普通AI的区别</td>
+<td>普通AI回答问题，扣子能做出东西</td>
+<td>“回答问题 ≠ 做出东西”</td>
+</tr>
+<tr>
+<td>提示词是什么</td>
+<td>给AI的”工作说明书”</td>
+<td>“配方写清楚，点单才准确！”</td>
+</tr>
+<tr>
+<td>提示词四要素</td>
+<td>角色、任务、限制、格式</td>
+<td>“谁、做啥、不能做、怎么做”</td>
+</tr>
+<tr>
+<td>提示词技巧</td>
+<td>具体、简单、举例、用Markdown</td>
+<td>“说清楚、不贪心、给例子”</td>
+</tr>
+</tbody></table></div>
+<hr>
+<h3 id="🎯-课后小任务"><a href="#🎯-课后小任务" class="headerlink" title="🎯 课后小任务"></a>🎯 课后小任务</h3><ol>
+<li><p>🌟 <strong>初级任务</strong>：修改”故事大王”的提示词，加上”故事讲完后要问小朋友学到了什么道理”</p>
+</li>
+<li><p>🌟🌟 <strong>中级任务</strong>：参考模板，创建一个”背单词助手”智能体</p>
+</li>
+<li><p>🌟🌟🌟 <strong>高级任务</strong>：给你的智能体增加”对话记忆”功能，让它能记住你们之前聊了什么</p>
+</li>
+</ol>
+<hr>
+<h3 id="📚-继续学习资源"><a href="#📚-继续学习资源" class="headerlink" title="📚 继续学习资源"></a>📚 继续学习资源</h3><ul>
+<li>🔗 扣子编程官网：<a target="_blank" rel="noopener" href="https://code.coze.cn/">https://code.coze.cn</a></li>
+<li>📖 扣子官方文档：<a target="_blank" rel="noopener" href="https://www.coze.cn/docs">https://www.coze.cn/docs</a></li>
+<li>💬 有问题可以在扣子里问AI助手</li>
+</ul>
+<hr>
+<h2 id="💌-给小朋友的话"><a href="#💌-给小朋友的话" class="headerlink" title="💌 给小朋友的话"></a>💌 给小朋友的话</h2><blockquote>
+<p>亲爱的小朋友，恭喜你完成了扣子编程入门教程！🎊</p>
+<p>你已经学会了用”魔法”和AI对话，创造你自己的智能体！</p>
+<p>记住：<strong>不要害怕尝试</strong>，写错了提示词没关系，改一改就好了！<br><strong>不要害怕问问题</strong>，问AI、问老师、问家长都可以！</p>
+<p>也许下一个做出厉害应用的人，就是你！🚀</p>
+<p>加油！未来的编程小达人！💪✨</p>
+</blockquote>
+<hr>
+</div><div class="post-reward"><div class="post-reward-btn" title="赞赏作者"><img src="/ZLS_BIANCHENG/assets/images/svg/uc/uc-gift.svg" class="icon noview" alt="Icon"><span></span></div><div class="post-reward-content"><div class="post-reward-text"></div><div class="post-reward-list"><a href="/ZLS_BIANCHENG/null" target="_blank">致谢名单</a></div></div></div><div class="post-copyright"><div class="post-copyright-info">本作品由 周老师 于 2026-05-16 11:41:00 发布</div><div class="post-copyright-link"><span>作品地址：<a href="https://qingkechuang.github.io/2026/05/16/COZE/COZE%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8/">COZE编程入门</a></span><button class="copy-text" type="button" data-text="https://qingkechuang.github.io/2026/05/16/COZE/COZE%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8/">复制</button></div><div class="post-copyright-detail">除特别声明外，本站作品均采用 <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' title='Attribution-NonCommercial-ShareAlike' target='_blank'>CC BY-NC-SA 4.0</a> 许可协议，转载请注明来自 <a href='/ZLS_BIANCHENG/'>周老师的编程课堂</a></div><img class="post-copyright-icon noview" src="/ZLS_BIANCHENG/assets/images/Hexo-Theme-MEOW.png" alt="Logo"/></div><div class="post-tail-tags"><a class="post-tail-tags-link" href="/ZLS_BIANCHENG/tags/AI/" rel="tag">AI</a></div><div class="post-nav"><a class="post-nav-prev" nopost=""></a><a class="post-nav-next" href="/ZLS_BIANCHENG/2026/04/26/C++/%E6%8C%87%E9%92%88%E5%85%A5%E9%97%A8/" title="指针入门">下一篇<span>指针入门</span></a></div></div><aside id="post-sidebar" status="show"><div id="toc-container"><div class="toc-title"><img src="/ZLS_BIANCHENG/assets/images/svg/ta/ta-toc.svg" class="icon noview" alt="Icon"><span>目录</span></div><div class="toc-content" id="toc-div"><ol class="toc-list"><li class="toc-list-item toc-list-level-1"><a class="toc-list-link" href="#%F0%9F%A4%96-%E6%89%A3%E5%AD%90%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B"><span class="toc-list-text">🤖 扣子编程入门使用教程</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#%F0%9F%93%9A-%E7%9B%AE%E5%BD%95"><span class="toc-list-text">📚 目录</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#%F0%9F%8E%AF-%E4%BB%80%E4%B9%88%E6%98%AF%E6%89%A3%E5%AD%90%E7%BC%96%E7%A8%8B%EF%BC%9F"><span class="toc-list-text">🎯 什么是扣子编程？</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#%F0%9F%93%96-%E6%89%A3%E5%AD%90%E7%BC%96%E7%A8%8B%E7%9A%84%E5%AE%98%E6%96%B9%E4%BB%8B%E7%BB%8D"><span class="toc-list-text">📖 扣子编程的官方介绍</span></a></li></ol></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#%F0%9F%94%A7-%E6%89%A3%E5%AD%90%E7%BC%96%E7%A8%8B%E8%83%BD%E5%81%9A%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-list-text">🔧 扣子编程能做什么？</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#1%EF%B8%8F%E2%83%A3-%E6%99%BA%E8%83%BD%E4%BD%93%EF%BC%88Bot-Agent%EF%BC%89%E2%80%94%E2%80%94%E4%BD%A0%E7%9A%84%E8%B6%85%E7%BA%A7%E5%B0%8F%E5%8A%A9%E6%89%8B"><span class="toc-list-text">1️⃣ 智能体（Bot&#x2F;Agent）——你的超级小助手</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#2%EF%B8%8F%E2%83%A3-%E5%B7%A5%E4%BD%9C%E6%B5%81%EF%BC%88Workflow%EF%BC%89%E2%80%94%E2%80%94%E8%87%AA%E5%8A%A8%E5%8C%96%E7%9A%84%E6%B5%81%E6%B0%B4%E7%BA%BF"><span class="toc-list-text">2️⃣ 工作流（Workflow）——自动化的流水线</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#3%EF%B8%8F%E2%83%A3-%E7%BD%91%E9%A1%B5%E5%BA%94%E7%94%A8%EF%BC%88Web-App%EF%BC%89%E2%80%94%E2%80%94%E5%81%9A%E5%87%BA%E5%B0%8F%E6%B8%B8%E6%88%8F%E7%BD%91%E7%AB%99%EF%BC%81"><span class="toc-list-text">3️⃣ 网页应用（Web App）——做出小游戏网站！</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#4%EF%B8%8F%E2%83%A3-%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%EF%BC%88Mobile-App%EF%BC%89%E2%80%94%E2%80%94%E5%81%9A%E5%87%BA%E6%89%8B%E6%9C%BAAPP%EF%BC%81"><span class="toc-list-text">4️⃣ 移动应用（Mobile App）——做出手机APP！</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#%F0%9F%94%80-%E4%B8%A4%E7%A7%8D%E5%BC%80%E5%8F%91%E6%96%B9%E5%BC%8F"><span class="toc-list-text">🔀 两种开发方式</span></a></li></ol></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#%F0%9F%A4%94-%E5%92%8C%E6%99%AE%E9%80%9AAI%E8%81%8A%E5%A4%A9%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-list-text">🤔 和普通AI聊天有什么区别？</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#%F0%9F%8E%AF-%E8%AE%B0%E4%BD%8F%E8%BF%99%E4%B8%AA%E6%A0%B8%E5%BF%83%E5%8C%BA%E5%88%AB%EF%BC%9A"><span class="toc-list-text">🎯 记住这个核心区别：</span></a></li></ol></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#%F0%9F%93%9D-%E5%A6%82%E4%BD%95%E7%BB%99AI%E5%86%99%E2%80%9D%E5%B7%A5%E4%BD%9C%E8%AF%B4%E6%98%8E%E4%B9%A6%E2%80%9D%E2%80%94%E2%80%94%E6%8F%90%E7%A4%BA%E8%AF%8D"><span class="toc-list-text">📝 如何给AI写”工作说明书”——提示词</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#%F0%9F%A4%94-%E4%BB%80%E4%B9%88%E6%98%AF%E6%8F%90%E7%A4%BA%E8%AF%8D%EF%BC%9F"><span class="toc-list-text">🤔 什么是提示词？</span></a></li></ol></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#%F0%9F%A7%99%E2%80%8D%E2%99%82%EF%B8%8F-%E6%8F%90%E7%A4%BA%E8%AF%8D%E7%9A%84%E5%9B%9B%E4%BB%B6%E6%B3%95%E5%AE%9D"><span class="toc-list-text">🧙‍♂️ 提示词的四件法宝</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#%F0%9F%97%A1%EF%B8%8F-%E6%B3%95%E5%AE%9D%E4%B8%80%EF%BC%9A%E8%A7%92%E8%89%B2%E8%AE%BE%E5%AE%9A-%E2%80%94%E2%80%94-%E5%91%8A%E8%AF%89AI%E2%80%9D%E4%BD%A0%E6%98%AF%E8%B0%81%E2%80%9D"><span class="toc-list-text">🗡️ 法宝一：角色设定 —— 告诉AI”你是谁”</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#%F0%9F%8E%AF-%E6%B3%95%E5%AE%9D%E4%BA%8C%EF%BC%9A%E6%A0%B8%E5%BF%83%E4%BB%BB%E5%8A%A1-%E2%80%94%E2%80%94-%E5%91%8A%E8%AF%89AI%E2%80%9D%E8%A6%81%E5%81%9A%E4%BB%80%E4%B9%88%E2%80%9D"><span class="toc-list-text">🎯 法宝二：核心任务 —— 告诉AI”要做什么”</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#%F0%9F%9A%AB-%E6%B3%95%E5%AE%9D%E4%B8%89%EF%BC%9A%E7%BA%A6%E6%9D%9F%E8%A7%84%E5%88%99-%E2%80%94%E2%80%94-%E5%91%8A%E8%AF%89AI%E2%80%9D%E4%B8%8D%E8%83%BD%E5%81%9A%E4%BB%80%E4%B9%88%E2%80%9D"><span class="toc-list-text">🚫 法宝三：约束规则 —— 告诉AI”不能做什么”</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#%F0%9F%93%8B-%E6%B3%95%E5%AE%9D%E5%9B%9B%EF%BC%9A%E5%9B%9E%E5%A4%8D%E6%A0%BC%E5%BC%8F-%E2%80%94%E2%80%94-%E5%91%8A%E8%AF%89AI%E2%80%9D%E6%80%8E%E4%B9%88%E5%9B%9E%E7%AD%94%E2%80%9D"><span class="toc-list-text">📋 法宝四：回复格式 —— 告诉AI”怎么回答”</span></a></li></ol></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#%F0%9F%93%96-%E8%B6%85%E5%A5%BD%E7%94%A8%E7%9A%84%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%A8%A1%E6%9D%BF"><span class="toc-list-text">📖 超好用的提示词模板</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#%F0%9F%93%9A-%E6%A8%A1%E6%9D%BF%E4%B8%80%EF%BC%9A%E6%95%85%E4%BA%8B%E5%A4%A7%E7%8E%8B-%F0%9F%91%91"><span class="toc-list-text">📚 模板一：故事大王 👑</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#%F0%9F%A7%A9-%E6%A8%A1%E6%9D%BF%E4%BA%8C%EF%BC%9A%E6%88%90%E8%AF%AD%E5%B0%8F%E8%BE%BE%E4%BA%BA-%F0%9F%93%96"><span class="toc-list-text">🧩 模板二：成语小达人 📖</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#%F0%9F%93%9D-%E6%A8%A1%E6%9D%BF%E4%B8%89%EF%BC%9A%E4%BD%9C%E4%B8%9A%E5%B0%8F%E5%B8%AE%E6%89%8B-%F0%9F%93%90"><span class="toc-list-text">📝 模板三：作业小帮手 📐</span></a></li></ol></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#%F0%9F%92%A1-%E5%86%99%E6%8F%90%E7%A4%BA%E8%AF%8D%E7%9A%84%E5%B0%8F%E6%8A%80%E5%B7%A7"><span class="toc-list-text">💡 写提示词的小技巧</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#%E2%9C%85-%E6%8A%80%E5%B7%A7%E4%B8%80%EF%BC%9A%E8%A6%81%E5%85%B7%E4%BD%93%EF%BC%8C%E4%B8%8D%E8%A6%81%E6%A8%A1%E7%B3%8A"><span class="toc-list-text">✅ 技巧一：要具体，不要模糊</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#%E2%9C%85-%E6%8A%80%E5%B7%A7%E4%BA%8C%EF%BC%9A%E8%A6%81%E7%AE%80%E5%8D%95%EF%BC%8C%E4%B8%80%E6%AC%A1%E5%8F%AA%E8%AF%B4%E4%B8%80%E4%BB%B6%E4%BA%8B"><span class="toc-list-text">✅ 技巧二：要简单，一次只说一件事</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#%E2%9C%85-%E6%8A%80%E5%B7%A7%E4%B8%89%EF%BC%9A%E8%A6%81%E4%B8%BE%E4%BE%8B%EF%BC%8C%E7%BB%99AI%E7%9C%8B%E7%9C%8B%E4%BD%A0%E6%83%B3%E8%A6%81%E4%BB%80%E4%B9%88"><span class="toc-list-text">✅ 技巧三：要举例，给AI看看你想要什么</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#%E2%9C%85-%E6%8A%80%E5%B7%A7%E5%9B%9B%EF%BC%9A%E7%94%A8Markdown%E6%A0%BC%E5%BC%8F%E5%86%99%E6%8F%90%E7%A4%BA%E8%AF%8D"><span class="toc-list-text">✅ 技巧四：用Markdown格式写提示词</span></a></li></ol></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#%E2%9A%A0%EF%B8%8F-%E8%BF%99%E4%BA%9B%E5%9D%91%E4%B8%8D%E8%A6%81%E8%B8%A9%EF%BC%81"><span class="toc-list-text">⚠️ 这些坑不要踩！</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#%F0%9F%95%B3%EF%B8%8F-%E5%9D%91%E4%B8%80%EF%BC%9A%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%A4%AA%E6%A8%A1%E7%B3%8A-%E2%86%92-AI%E5%9B%9E%E7%AD%94%E8%B7%91%E5%81%8F"><span class="toc-list-text">🕳️ 坑一：提示词太模糊 → AI回答跑偏</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#%F0%9F%95%B3%EF%B8%8F-%E5%9D%91%E4%BA%8C%EF%BC%9A%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%A4%AA%E5%A4%8D%E6%9D%82-%E2%86%92-AI%E5%8F%AF%E8%83%BD%E6%90%9E%E6%B7%B7"><span class="toc-list-text">🕳️ 坑二：提示词太复杂 → AI可能搞混</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#%F0%9F%95%B3%EF%B8%8F-%E5%9D%91%E4%B8%89%EF%BC%9A%E6%B2%A1%E6%9C%89%E9%99%90%E5%88%B6-%E2%86%92-AI%E5%8F%AF%E8%83%BD%E4%B9%B1%E8%AF%B4"><span class="toc-list-text">🕳️ 坑三：没有限制 → AI可能乱说</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#%F0%9F%8E%AE-%E6%A1%88%E4%BE%8B%E4%BA%8C%EF%BC%9A%E5%88%9B%E5%BB%BA%E2%80%9D%E6%88%90%E8%AF%AD%E5%B0%8F%E8%BE%BE%E4%BA%BA%E2%80%9D%E6%99%BA%E8%83%BD%E4%BD%93"><span class="toc-list-text">🎮 案例二：创建”成语小达人”智能体</span></a></li></ol></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#%F0%9F%93%8B-%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93"><span class="toc-list-text">📋 学习总结</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#%F0%9F%8E%93-%E4%BB%8A%E5%A4%A9%E6%88%91%E4%BB%AC%E5%AD%A6%E5%88%B0%E4%BA%86%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-list-text">🎓 今天我们学到了什么？</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#%F0%9F%8E%AF-%E8%AF%BE%E5%90%8E%E5%B0%8F%E4%BB%BB%E5%8A%A1"><span class="toc-list-text">🎯 课后小任务</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#%F0%9F%93%9A-%E7%BB%A7%E7%BB%AD%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90"><span class="toc-list-text">📚 继续学习资源</span></a></li></ol></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#%F0%9F%92%8C-%E7%BB%99%E5%B0%8F%E6%9C%8B%E5%8F%8B%E7%9A%84%E8%AF%9D"><span class="toc-list-text">💌 给小朋友的话</span></a></li></ol></li></ol></div></div></aside></div></div><div id="toolbar" hide=""><div id="toolbar-setting-container" hide=""><div class="toolbar-item"><button id="tool-color-mode" title="深色模式" type="button"><img src="/ZLS_BIANCHENG/assets/images/svg/ta/ta-moon.svg" class="icon noview" alt="Icon"></button></div><div class="toolbar-item"><button class="copy-text" id="tool-share" title="分享" type="button" data-text="https://qingkechuang.github.io/2026/05/16/COZE/COZE%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8/"><img src="/ZLS_BIANCHENG/assets/images/svg/ta/ta-share.svg" class="icon noview" alt="Icon"></button></div><div class="toolbar-item"><button id="tool-font-size-plus" title="放大字体" type="button"><img src="/ZLS_BIANCHENG/assets/images/svg/ta/ta-text-plus.svg" class="icon noview" alt="Icon"></button></div><div class="toolbar-item"><button id="tool-font-size-minus" title="缩小字体" type="button"><img src="/ZLS_BIANCHENG/assets/images/svg/ta/ta-text-minus.svg" class="icon noview" alt="Icon"></button></div></div><div class="toolbar-container"><div class="toolbar-item"><button id="tool-setting" title="设置" type="button"><img src="/ZLS_BIANCHENG/assets/images/svg/ta/ta-setting.svg" class="icon noview" alt="Icon"></button></div><div class="toolbar-item"><button id="tool-toc" title="目录" type="button"><img src="/ZLS_BIANCHENG/assets/images/svg/ta/ta-toc.svg" class="icon noview" alt="Icon"></button></div><div class="toolbar-item"><button id="tool-gototop" title="返回顶部" type="button"><img src="/ZLS_BIANCHENG/assets/images/svg/ta/ta-up.svg" class="icon noview" alt="Icon"></button></div></div></div><div id="music-player"></div></main><footer><div class="footer"><div id="footer-copyright">© 2024 - 2026 <span>💗</span> <a href="/ZLS_BIANCHENG/null">周老师</a></div><div id="footer-info"><div id="footer-framework">🚀本站由 <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/chanwj/hexo-theme-meow" title="3.3.1" target="_blank">Meow</a> 强力驱动</div><div id="footer-runtime"><span id="runtime" data-startdate="2024-04-02T22:16:20.000Z">🌻已稳定运行.年.月.天</span></div></div></div></footer><div class="scripts"><script>const GLOBALCONFIG = {
+  root: '/ZLS_BIANCHENG/',
+  toolbar: true,
+  lazyload_src: '/ZLS_BIANCHENG/assets/images/Meow-Loading.webp',
+  friends: false,
+  album: '',
+  codeblock: true,
+  code_copy_text: false,
+  share_text: '🐱Share From Meow',
+  onblur_title: 'Please Come Back～✧(´▽`ʃ♡ƪ)',
+  mouse_click: false,
+  notify:{
+    enable: false,
+    info: '复制成功～转载请标注本文地址',
+    f12_info: '开发者模式已打开，请遵循本站版权协议'
+  },
+  search: {
+    enable: false,
+    path: '',
+    local: {
+      top_n_per_article: 1,
+      preload: false
+    }
+  },
+  encrypt: false,
+};
+</script><script>if (!localStorage.getItem('color-mode')) {
+  localStorage.setItem('color-mode', 'light' || 'light');
+}
+document.body.setAttribute('data-mode', localStorage.getItem('color-mode'));
+</script>
+<script src="/ZLS_BIANCHENG/js/theme/tools/utils.js"></script>
+
+<script src="/ZLS_BIANCHENG/js/plugins/dist/lazyload.min.js"></script>
+
+<script src="/ZLS_BIANCHENG/js/plugins/view-image.min.js"></script>
+<script>if (localStorage.getItem('font-size')) {
+  document.querySelector('.post').style.fontSize = localStorage.getItem('font-size') + 'px';
+}
+</script>
+<script src="/ZLS_BIANCHENG/js/plugins/dist/APlayer.min.js"></script>
+<script>const initAplayer = (data) => {
+  if (!data.length) return;
+
+  const ap = new APlayer({
+    container: document.getElementById('music-player'),
+    fixed: true,
+    autoplay: false,
+    theme: '#FFB347',
+    loop: 'all',
+    order: 'list',
+    volume: 0.7,
+    lrcType: 3,
+    audio: data
+  });
+
+  ap.on('play', () => {
+    document.getElementById('music-player').setAttribute("play", "");
+  });
+  ap.on('pause', () => {
+    document.getElementById('music-player').removeAttribute("play");
+  });
+};
+
+const fetchData = () => {
+  fetch('')
+    .then(res => res.json())
+    .then(result => initAplayer(result));
+};
+
+if ('') {
+  document.addEventListener("DOMContentLoaded", fetchData);
+} else {
+  document.addEventListener("DOMContentLoaded", initAplayer());;
+}</script>
+<script src="/ZLS_BIANCHENG/js/main.js" type="module"></script>
+</div></body></html>
